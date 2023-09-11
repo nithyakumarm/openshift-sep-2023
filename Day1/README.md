@@ -8,7 +8,7 @@
   - GRUB 1
   - GRUB 2
 - when a system is booted, the BIOS(Basic Input Output System) - POST(Power On Self Test) once completed, the BIOS will instruct the CPU to run the boot loader utility
-- the boot loader utility then scans your hard disk looking for OS, if there are multiple OS installed on your system, then it gives a menu for you to choose the OS you wish to boot into
+- the boot loader utility then scans your hard disk looking for OS, if there aredocker build -t tektutor/ubuntu-with-maven:latest . multiple OS installed on your system, then it gives a menu for you to choose the OS you wish to boot into
 - though many OS can be installed only one OS can be active at point of time
 
 ## What is Hypervisor?
@@ -559,7 +559,7 @@ Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/a6d823a3-4dad-4884-b40b-daa370c034d0)
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/61e1630c-1f8f-4813-9fa6-a0feddc1ebba)
 
-## Creating a container using our custom docker image
+## Lab - Creating a container using our custom docker image
 ```
 docker rm -f $(docker ps -aq)
 docker run -dit --name ubuntu1 --hostname ubuntu1 tektutor/ubuntu-with-maven:latest
