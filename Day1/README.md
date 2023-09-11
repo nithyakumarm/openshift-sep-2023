@@ -144,3 +144,16 @@
 - it has one application binary with all its dependent libraries pre-installed
 - it comes with basic minimum tools
 
+# Docker Commands
+
+## Lab - Checking your docker version on the CentOS Lab machine
+```
+docker --version
+```
+
+Expected output
+<pre>
+┌──(jegan㉿tektutor.org)-[~/openshift-sep-2023]
+└─$ docker --version
+Docker version 20.10.25+dfsg1, build b82b9f3
+</pre>
