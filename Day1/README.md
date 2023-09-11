@@ -8,7 +8,7 @@
   - GRUB 1
   - GRUB 2
 - when a system is booted, the BIOS(Basic Input Output System) - POST(Power On Self Test) once completed, the BIOS will instruct the CPU to run the boot loader utility
-- the boot loader utility then scans your hard disk looking for OS, if there are multiple OS installed on your system, then it gives a menu for you to choose the OS you wish to boot into
+- the boot loader utility then scans your hard disk looking for OS, if there aredocker build -t tektutor/ubuntu-with-maven:latest . multiple OS installed on your system, then it gives a menu for you to choose the OS you wish to boot into
 - though many OS can be installed only one OS can be active at point of time
 
 ## What is Hypervisor?
@@ -558,3 +558,128 @@ Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/4de6a458-a135-437e-ba36-f32189a8da50)
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/a6d823a3-4dad-4884-b40b-daa370c034d0)
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/61e1630c-1f8f-4813-9fa6-a0feddc1ebba)
+
+## Lab - Creating a container using our custom docker image
+```
+docker rm -f $(docker ps -aq)
+docker run -dit --name ubuntu1 --hostname ubuntu1 tektutor/ubuntu-with-maven:latest
+docker ps
+docker exec -it ubuntu1 bash
+git --version
+mvn --version
+ifconfig
+ping www.google.com
+exit
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/96d1a156-d442-4d01-ab5c-266ddb596005)
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/f0f7178b-f8c0-42ff-b283-ff49272ca7db)
+
+
+## Lab - Creating a nginx web server container
+```
+docker rm -f $(docker ps -aq)
+docker run -d --name nginx1 --hostname nginx1 nginx:latest
+docker ps
+docker inspect -f {{.NetworkSettings.IPAddress}} nginx1
+curl http://localhost:80
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/0945663f-72be-4873-8b5e-9b974431ae2d)
+
+
+## Lab - Port Forwarding to access the web page hosted inside containers from other machines in the same network
+```
+docker rm -f $(docker ps -aq)
+docker run -d --name nginx1 --hostname nginx1 -p 8001:80 nginx:latest
+docker run -d --name nginx2 --hostname nginx2 -p 8002:80 nginx:latest
+docker run -d --name nginx3 --hostname nginx3 -p 8003:80 nginx:latest
+docker ps
+curl http://localhost:8001
+curl http://localhost:8002
+curl http://localhost:8003
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/38f01493-8f1f-489a-9484-57ca5f03836f)
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/146e87d8-bf18-4261-ad7e-8ed972c734f4)
+
+## Lab - Storing mysql db, table and records in an external storage
+```
+mkdir -p /tmp/mysql
+ls -lha /tmp/mysql
+docker run -d --name mysql --hostname mysql -e MYSQL_ROOT_PASSWORD=root@123 -v /tmp/mysql:/var/lib/mysql mysql:latest
+docker ps
+docker exec -it mysql bash
+mysql -u root -p
+
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/415a193e-8be6-4c8c-815a-376f4c4f00a8)
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/5f1f7a0e-1bac-46d1-a51b-fe9bedb13d4d)
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/70189939-347d-4951-b556-460e1bea64f6)
+
+Let's us delete the mysql container
+```
+docker rm -f mysql
+```
+
+Recreate a new mysql container mounting the same localhost path
+```
+docker run -d --name mysql --hostname mysql -e MYSQL_ROOT_PASSWORD=root@123 -v /tmp/mysql:/var/lib/mysql mysql:latest
+docker ps
+docker exec -it mysql bash
+mysql -u root -p
+SHOW DATABASES;
+USE tektutor;
+SHOW TABLES;
+SELECT * FROM training;
+exit
+exit
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/b867bf8f-f0ed-49f8-a184-5f5a04c6f051)
+
+We haven't lost the data because the data is stored externally i.e in our CentOS training machine at /tmp/mysql
+```
+# Try this on local machine not inside the mysql container
+ls -lha /tmp/mysql
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/a43cc086-3b1b-4a1d-bd38-fdfe0fba68c5)
+
+## Lab - Copying files from local machine to container and container to local machine
+Copying file from local machine into the container at /root folder
+```
+echo "Test file" > test.txt
+cat test.txt
+docker cp test.txt mysql:/root
+docker exec -it mysql bash
+cd /root
+ls
+cat test.txt
+```
+
+Copying file from container to local machine
+```
+echo "Test file content modified inside container" > test.txt
+exit
+ls
+cat test.txt
+docker cp mysql:/root/test.txt .
+cat test.txt
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/5d999404-5758-4a63-9586-51856fd69057)
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/9d4c50c3-082e-42f5-a9bf-deb5cf4fbb2d)
+
+## Please provide first day training feedback at the below URL
+<pre>
+https://tcheck.co/HzQlJ3  
+</pre>
