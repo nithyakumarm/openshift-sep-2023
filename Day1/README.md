@@ -142,5 +142,5 @@
 - container has its own virtual network card
 - container has its own Private IP address
 - it has one application binary with all its dependent libraries pre-installed
-- it comes with basic minimul tools
+- it comes with basic minimum tools
 
