@@ -1,5 +1,18 @@
 # Red Hat OpenShift Training ( 11 Sep 2023 to 14th Sep 2023 )
 
+## Cloning this repository - only the first time you should clone
+```
+cd ~
+git clone https://github.com/tektutor/openshift-sep-2023.git
+cd openshift-sep-2023
+```
+
+## Pulling delta changes everytime once cloned
+```
+cd ~/openshift-sep-2023
+git pull
+```
+
 ## My YouTube Channel
 https://www.youtube.com/@JeganathanSwaminathan/videos
 

@@ -452,3 +452,109 @@ docker ps -a
 
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/80e21c66-cd65-40fa-ac84-800ad5d7c8d3)
+
+## Lab - Finding IP address of a running container
+```
+docker ps
+docker inspect ubuntu1 | grep IPA
+docker inspect -f {{.NetworkSettings.IPAddress}} ubuntu2
+docker inspect -f {{.NetworkSettings.IPAddress}} ubuntu3
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/c7d349b8-5b1d-47f6-99f9-aba2724460ed)
+
+## Lab - Creating 3 centos containers
+```
+docker ps
+docker run -dit --name centos1 --hostname centos1 centos:centos7.9.2009 /bin/bash
+docker run -dit --name centos2 --hostname centos2 centos:centos7.9.2009 /bin/bash
+docker run -dit --name centos3 --hostname centos3 centos:centos7.9.2009 /bin/bash
+docker ps
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/b460edae-4526-413a-a39d-7f644ce20580)
+
+## Lab - List containers name that matches a name pattern
+```
+docker ps -f "name=ubuntu"
+docker ps -f "name=centos"
+docker ps -f "name=c"
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/d69d5d3b-516d-4de1-a1dc-b94cdcf2202b)
+
+## Lab - Listing all containers whose image name matches a given value
+```
+docker ps | grep centos:centos7.9.2009
+docker ps | grep ubuntu:22.04
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/8ec7334d-1887-4df7-b50f-f955556f4103)
+
+## Lab - Creating a mysql db server container
+When prompts for password, type "root@123" without the double quotes.
+```
+docker ps -a
+docker run -d --name mysql --hostname mysql -e MYSQL_ROOT_PASSWORD=root@123 mysql:latest
+docker ps
+docker exec -it mysql sh
+mysql -u root -p
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/f95d867c-3e92-4a46-ae2d-093f1cf76859)
+
+Checking default databases in mysql server and creating a new database named tektutor
+```
+SHOW DATABASES;
+CREATE DATABASE tektutor;
+SHOW DATABASES;
+USE tektutor
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/9ad16cf5-afda-4d8f-b948-f097e4613446)
+
+
+Creating table inside tektutor database and inserting some records into training table.
+```
+CREATE TABLE training ( id INT NOT NULL, name VARCHAR(250), duration VARCHAR(250), PRIMARY KEY(id) );
+SHOW TABLES;
+INSERT INTO training VALUES ( 1, "DevOps", "5 Days" );
+INSERT INTO training VALUES ( 2, "Advanced OpenShift", "5 Days" );
+INSERT INTO training VALUES ( 3, "Advanced Ansible", "5 Days" );
+SELECT * FROM training;
+exit
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/7bda7a7c-2bb4-42ed-b2e7-5af6a1011adc)
+
+
+## Lab - Checking mysql db server logs
+```
+docker ps
+docker logs mysql
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/f0fb56a2-56bb-443e-b605-6396911f0a99)
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/07e413bb-aab2-4bd3-a6b3-c02abb6a4aba)
+
+
+## Lab - Creating a Custom Docker Image with all the tools we need for our project
+```
+cd ~/openshift-sep-2023
+git pull
+cd Day1/CustomDockerImages
+docker build -t tektutor/ubuntu-with-maven:latest .
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/4de6a458-a135-437e-ba36-f32189a8da50)
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/a6d823a3-4dad-4884-b40b-daa370c034d0)
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/61e1630c-1f8f-4813-9fa6-a0feddc1ebba)
