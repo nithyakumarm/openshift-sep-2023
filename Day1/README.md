@@ -499,7 +499,7 @@ Expected output
 When prompts for password, type "root@123" without the double quotes.
 ```
 docker ps -a
-docker run -d --name mysql --hostname mysql -e MySQL_ROOT_PASSWORD=root@123 mysql:latest
+docker run -d --name mysql --hostname mysql -e MYSQL_ROOT_PASSWORD=root@123 mysql:latest
 docker ps
 docker exec -it mysql sh
 mysql -u root -p
