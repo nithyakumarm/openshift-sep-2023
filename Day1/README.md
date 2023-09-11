@@ -124,6 +124,13 @@
 - Website url - hub.docker.com
 
 ## What is Docker Image?
+- it is similar to Windows ISO Operating System image we burn in DVDs
+- using the Windows 11 Installer DVD/ISO Image, we can install Windows 11 in many laptops/desktops/workstation/servers
+- similar to that, Docker Image is required to create containers
+- Example
+  - Using mysql docker image, we can create 1-to-many mysql docker containers
+  - Using nginx docker image, we can create many nginx docker containers
+- in other words, it is a specification of Docker container
 
 ## What is Docker Container?
 
