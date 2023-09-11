@@ -172,3 +172,12 @@ docker images
 
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/f4646949-b5c3-4d53-82b0-713edbbda33c)
+
+## Lab - Docker Remote Registry
+Navigate to the below URL in your CentOS web browser
+<pre>
+http://hub.docker.com 
+</pre>
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/e98c7a4f-6706-46dd-90d7-1abb3e41cf59)
