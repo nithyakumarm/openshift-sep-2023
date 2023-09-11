@@ -307,4 +307,10 @@ docker rename vigorous_panini hello1_container
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/bf9e99c7-27c6-4321-a7bf-bc57d207a890)
 
+## Lab - Creating a container with specific name and hostname
+```
+docker run --name jegan-hello-container --hostname jegan-hello-container hello-world:latest 
+```
 
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/635dc749-124c-42ab-a8b6-57dc300ea49c)
