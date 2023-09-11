@@ -475,3 +475,10 @@ docker ps
 
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/b460edae-4526-413a-a39d-7f644ce20580)
+
+## Lab - List containers name that matches a name pattern
+```
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/d69d5d3b-516d-4de1-a1dc-b94cdcf2202b)
