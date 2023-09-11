@@ -196,3 +196,13 @@ Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/e9d2409a-7fe9-44dd-81a7-c70565c25008)
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/941025cd-73fc-4d8d-b2f2-443b9f222a7a)
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/3f2b2001-b748-4b41-9371-e781fd77dd1a)
+
+## Lab - Deleting docker image from your local docker registry
+```
+docker images
+docker rmi hello-world:latest
+docker images
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/5cca3e7e-3984-47eb-94cd-361d0cc0ab32)
