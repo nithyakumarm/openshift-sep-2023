@@ -452,3 +452,14 @@ docker ps -a
 
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/80e21c66-cd65-40fa-ac84-800ad5d7c8d3)
+
+## Lab - Finding IP address of a running container
+```
+docker ps
+docker inspect ubuntu1 | grep IPA
+docker inspect -f {{.NetworkSettings.IPAddress}} ubuntu2
+docker inspect -f {{.NetworkSettings.IPAddress}} ubuntu3
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/c7d349b8-5b1d-47f6-99f9-aba2724460ed)
