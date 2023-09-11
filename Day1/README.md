@@ -605,3 +605,20 @@ curl http://localhost:8003
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/38f01493-8f1f-489a-9484-57ca5f03836f)
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/146e87d8-bf18-4261-ad7e-8ed972c734f4)
+
+## Lab - Storing mysql db, table and records in an external storage
+```
+mkdir -p /tmp/mysql
+ls -lha /tmp/mysql
+docker run -d --name mysql --hostname mysql -e MYSQL_ROOT_PASSWORD=root@123 -v /tmp/mysql:/var/lib/mysql mysql:latest
+docker ps
+docker exec -it mysql bash
+mysql -u root -p
+
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/415a193e-8be6-4c8c-815a-376f4c4f00a8)
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/5f1f7a0e-1bac-46d1-a51b-fe9bedb13d4d)
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/70189939-347d-4951-b556-460e1bea64f6)
+
