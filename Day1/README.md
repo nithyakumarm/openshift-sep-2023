@@ -44,8 +44,49 @@
   - Oracle VirtualBox - Free works in Linux/Mac/Windows
   - Parallels ( Mac OS-X )
   - Microsoft Hyper-V
+
+## What is Container Technology?
+- is an application virtualization technolgy
+- each container represents one application process
+- though it may look and behave like OS in some cases, technically it is an application
+- it doesn't have OS Kernel
+- one container represents one application
+- many containers can run within an OS
+- this type of virtualization is consider lightweight virtualization as they don't require dedicated hardware resources
+- containers running in the same OS shares the hardware resources in that OS just like how other normal applications share hardware resources
+- containers depend on Linux Kernel Features
+  1. Namespace
+     - helps in isolating one container from other containers
+  2. Control Groups (CGroups)
+     - used to apply resource quota restrictions
+      - we can limit how cpu cores at the max a container can utilize
+      - we can limit how much RAM at the max one container can utilize
  
+## What is a Container Engine?
+- a high-level user-friendly software that manages container/images
+- it depends on Container Runtime to manage containers
+- Examples
+  - Docker
+  - Podman
+
+## What is Container Runtime?
+- a software that manages containers
+  - creating a container
+  - listing a container
+  - stop/start/restarting/kill/abort/delete container
+- depends on OS Kernel to create/manage containers
+- they are low-level software which isn't user-friendly
+- hence normally no end-users directly use the container runtime
+- Examples
+  - runC 
+  - CRI-O
+  
 ## What is Docker?
+- a high-level software that depends on Linux Kernel to support application virtualization
+- a Container Engine
+- it is user-friendly tool to manage docker images/containers
+- the end-users need not have to know low-level kernel stuffs to work in containers
+- Docker depends on containerd which depends on Container Runtime called runC
 
 ## Hypervisor High-Level Architecture
 
