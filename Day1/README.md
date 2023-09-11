@@ -353,3 +353,15 @@ host
 
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/c4276915-91ed-4fdb-9c4f-2a0744e98f52)
+
+## Lab - Getting inside container that is running in background
+```
+docker exec -it ubuntu1 /bin/bash
+hostname
+hostname -i
+ls
+exit
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/efd26550-6784-4eaf-9e67-a4f4627fb68e)
