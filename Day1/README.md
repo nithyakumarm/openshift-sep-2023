@@ -332,5 +332,15 @@ docker run -dit --name ubuntu2 --hostname ubuntu2 ubuntu:22.04 /bin/bash
 docker ps
 ```
 
+In the above command,
+<pre>
+dit - means deattached interactive terminal i.e run the container in the background
+name - name of the container
+hostname - any user-defined hostname you wish to assign to your container
+ubuntu:22.04 - is the docker image using which the container will be created
+/bin/bash - indicates we would to run/launch bash terminal inside the container as default application
+host  
+</pre>
+
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/c4276915-91ed-4fdb-9c4f-2a0744e98f52)
