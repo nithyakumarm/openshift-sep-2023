@@ -380,7 +380,7 @@ Exiting from the shell will lead to exitting the container, as /bin/bash is the 
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/235a1f22-f577-41d4-82ae-ceb53679daa9)
 
-## Lab - Starting a exited container
+## Lab - Starting an exited container
 ```
 docker ps
 docker ps -a
