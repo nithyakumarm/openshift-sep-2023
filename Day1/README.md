@@ -413,3 +413,18 @@ docker ps -a
 
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/a238356b-538c-48b1-bf60-e5aa6a25a46b)
+
+## Lab - Stopping and Starting multiple containers without calling out their names
+```
+docker ps
+docker ps -q
+docker stop $(docker ps -q)
+docker ps
+docker ps -a
+docker ps -aq
+docker start $(docker ps -aq)
+docker ps
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/922a5ca1-1c4e-416c-a3a2-6d0b9f272e86)
