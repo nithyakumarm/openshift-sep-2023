@@ -495,3 +495,10 @@ docker ps | grep ubuntu:22.04
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/8ec7334d-1887-4df7-b50f-f955556f4103)
 
+## Lab - Creating a mysql db server container
+```
+docker run -d --name mysql --hostname mysql -e MySQL_ROOT_PASSWORD=root@123 mysql:latest
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/f95d867c-3e92-4a46-ae2d-093f1cf76859)
