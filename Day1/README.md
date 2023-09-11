@@ -520,3 +520,20 @@ Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/9ad16cf5-afda-4d8f-b948-f097e4613446)
 
 
+Creating table inside tektutor database and inserting some records into training table.
+```
+CREATE TABLE training ( id INT NOT NULL, name VARCHAR(250), duration VARCHAR(250), PRIMARY KEY(id) );
+SHOW TABLES;
+INSERT INTO training VALUES ( 1, "DevOps", "5 Days" );
+INSERT INTO training VALUES ( 2, "Advanced OpenShift", "5 Days" );
+INSERT INTO training VALUES ( 3, "Advanced Ansible", "5 Days" );
+SELECT * FROM training;
+exit
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/7bda7a7c-2bb4-42ed-b2e7-5af6a1011adc)
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/63998535-e97c-4ce0-85fe-e934e8a7a8e6)
+
