@@ -533,7 +533,3 @@ exit
 
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/7bda7a7c-2bb4-42ed-b2e7-5af6a1011adc)
-
-Expected output
-![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/63998535-e97c-4ce0-85fe-e934e8a7a8e6)
-
