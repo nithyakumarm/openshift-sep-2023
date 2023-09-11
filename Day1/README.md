@@ -533,3 +533,13 @@ exit
 
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/7bda7a7c-2bb4-42ed-b2e7-5af6a1011adc)
+
+
+## Lab - Checking mysql db server logs
+```
+docker ps
+docker logs mysql
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/f0fb56a2-56bb-443e-b605-6396911f0a99)
