@@ -622,3 +622,33 @@ Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/5f1f7a0e-1bac-46d1-a51b-fe9bedb13d4d)
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/70189939-347d-4951-b556-460e1bea64f6)
 
+Let's us delete the mysql container
+```
+docker rm -f mysql
+```
+
+Recreate a new mysql container mounting the same localhost path
+```
+docker run -d --name mysql --hostname mysql -e MYSQL_ROOT_PASSWORD=root@123 -v /tmp/mysql:/var/lib/mysql mysql:latest
+docker ps
+docker exec -it mysql bash
+mysql -u root -p
+SHOW DATABASES;
+USE tektutor;
+SHOW TABLES;
+SELECT * FROM training;
+exit
+exit
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/b867bf8f-f0ed-49f8-a184-5f5a04c6f051)
+
+We haven't lost the data because the data is stored externally i.e in our CentOS training machine at /tmp/mysql
+```
+# Try this on local machine not inside the mysql container
+ls -lha /tmp/mysql
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/a43cc086-3b1b-4a1d-bd38-fdfe0fba68c5)
