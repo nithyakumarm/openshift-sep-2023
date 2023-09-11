@@ -604,3 +604,4 @@ curl http://localhost:8003
 
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/38f01493-8f1f-489a-9484-57ca5f03836f)
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/146e87d8-bf18-4261-ad7e-8ed972c734f4)
