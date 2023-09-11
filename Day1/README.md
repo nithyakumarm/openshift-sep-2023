@@ -368,3 +368,14 @@ Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/efd26550-6784-4eaf-9e67-a4f4627fb68e)
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/729153cd-92b7-4e55-ae3a-363d02fc2887)
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/d1491f78-db3f-4b1e-9003-31c40df8700e)
+
+## Lab - Creating a container in interactive mode
+```
+docker run -it --name ubuntu3 --hostname ubuntu3 ubuntu:22.04 /bin/bash
+exit
+```
+
+Exiting from the shell will lead to exitting the container, as /bin/bash is the default application running inside container.
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/235a1f22-f577-41d4-82ae-ceb53679daa9)
