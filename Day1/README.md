@@ -206,3 +206,30 @@ docker images
 
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/5cca3e7e-3984-47eb-94cd-361d0cc0ab32)
+
+
+## Lab - Creating your first container
+Listing and check if hello-world:latest docker image is present in your local docker registry
+```
+docker images
+```
+
+You can now create a container
+```
+docker run hello-world:latest
+```
+
+You can now check the above command first downloaded hello-world:latest image into your local registry
+```
+docker images
+```
+
+You can see the running containers with the below command
+```
+docker ps
+```
+
+If you wish to see all containers even if they aren't running
+```
+docker ps -a
+```
