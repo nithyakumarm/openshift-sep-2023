@@ -150,11 +150,8 @@
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/8c9455c9-99cd-4171-a261-efd3f0ae0b02)
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/a71e762f-6d8b-4266-a79d-3272fd47de8b)
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/d6ff1893-9679-489f-a383-a7b297fbae86)
-
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/4d9406b3-9250-490f-978b-8f630deb70e5)
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/5e4fa331-f199-44b7-9cec-f5c0898e07f4)
-
-
 
 ## Lab - Checking your docker version on the CentOS Lab machine
 ```
@@ -167,3 +164,11 @@ Expected output
 └─$ docker --version
 Docker version 20.10.25+dfsg1, build b82b9f3
 </pre>
+
+## Lab - Listing docker images in your local docker registry
+```
+docker images
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/f4646949-b5c3-4d53-82b0-713edbbda33c)
