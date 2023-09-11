@@ -543,3 +543,4 @@ docker logs mysql
 
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/f0fb56a2-56bb-443e-b605-6396911f0a99)
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/07e413bb-aab2-4bd3-a6b3-c02abb6a4aba)
