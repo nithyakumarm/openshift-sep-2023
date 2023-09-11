@@ -507,3 +507,16 @@ mysql -u root -p
 
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/f95d867c-3e92-4a46-ae2d-093f1cf76859)
+
+Checking default databases in mysql server and creating a new database named tektutor
+```
+SHOW DATABASES;
+CREATE DATABASE tektutor;
+SHOW DATABASES;
+USE tektutor
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/9ad16cf5-afda-4d8f-b948-f097e4613446)
+
+
