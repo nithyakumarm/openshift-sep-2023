@@ -652,3 +652,30 @@ ls -lha /tmp/mysql
 
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/a43cc086-3b1b-4a1d-bd38-fdfe0fba68c5)
+
+## Lab - Copying files from local machine to container and container to local machine
+Copying file from local machine into the container at /root folder
+```
+echo "Test file" > test.txt
+cat test.txt
+docker cp test.txt mysql:/root
+docker exec -it mysql bash
+cd /root
+ls
+cat test.txt
+```
+
+Copying file from container to local machine
+```
+echo "Test file content modified inside container" > test.txt
+exit
+ls
+cat test.txt
+docker cp mysql:/root/test.txt .
+cat test.txt
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/5d999404-5758-4a63-9586-51856fd69057)
+
+
