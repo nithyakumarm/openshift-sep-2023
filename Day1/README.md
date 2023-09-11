@@ -314,3 +314,13 @@ docker run --name jegan-hello-container --hostname jegan-hello-container hello-w
 
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/635dc749-124c-42ab-a8b6-57dc300ea49c)
+
+## Lab - Deleting exited containers
+```
+docker ps -a
+docker rm hello1_container jegan-hello-container
+docker ps -a
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/fdd78e9e-bf8f-4807-acad-9208c26cce1f)
