@@ -496,8 +496,13 @@ Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/8ec7334d-1887-4df7-b50f-f955556f4103)
 
 ## Lab - Creating a mysql db server container
+When prompts for password, type "root@123" without the double quotes.
 ```
+docker ps -a
 docker run -d --name mysql --hostname mysql -e MySQL_ROOT_PASSWORD=root@123 mysql:latest
+docker ps
+docker exec -it mysql sh
+mysql -u root -p
 ```
 
 Expected output
