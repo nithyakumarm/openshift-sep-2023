@@ -15,6 +15,14 @@
 - is virtualization technology
 - supports running many Operating System on the same laptop/desktop/workstation/server
 - many OS can be active at the same time
+- there are 2 types
+  - Type 1
+    - Bare-metal hypervisor
+    - no OS is required to installed this type of Hypervisor
+    - meant for Servers
+  - Type 2
+    -  For laptops/desktops/workstations
+    -  requires Host OS ( could be any of these OS - Unix, Linux, Mac or Windows )
 
 ## What is Docker?
 
