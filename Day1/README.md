@@ -87,6 +87,15 @@
 - a high-level software that depends on Linux Kernel to support application virtualization
 - a Container Engine
 - it is user-friendly tool to manage docker images/containers
+- is developed in Go programming languaged by the company Docker Inc
+- comes in 2 flavours
+  1. Docker Community Edition - Docker CE ( Free )
+  2. Docker Enterprise Edition - Docker EE ( Paid )
+- follows client/server architecture
+  client tool
+  - docker
+  server tool
+  - runs as a service called dockerd in linux
 - the end-users need not have to know low-level kernel stuffs to work in containers
 - Docker depends on containerd which depends on Container Runtime called runC
 
@@ -97,10 +106,22 @@
 ![Docker Architecture](DockerHighLevelArchitecture.png)
 
 ## What is Docker Local Registry?
+- is a directory in your local machine
+- in Linux machines /var/lib/docker is the directory that acts as a Local Docker Registry
+- Docker Registries has a collection of many Docker Images
 
 ## What is Docker Private Registry?
+- Docker Private Registry has collection of many Proprietary Docker Images and other third party open source and paid images
+- this can be setup using either JFrog Artifcatory or Sonatype Nexus
+- for testing/learning purpose you could also try registry:2 docker image from Docker Hub Remote Registry
+- this is setup for your entire organization, so that images can be shared by all the teams with your company
 
 ## What is Docker Remote Registry?
+- aka Remote Docker Registry
+- it is a Website maintained by Docker Inc organization
+- it has many open-source and third-party docker images
+- the images can be freely downloaded and used by anyone
+- Website url - hub.docker.com
 
 ## What is Docker Image?
 
