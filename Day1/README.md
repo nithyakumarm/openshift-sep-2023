@@ -379,3 +379,14 @@ Exiting from the shell will lead to exitting the container, as /bin/bash is the 
 
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/235a1f22-f577-41d4-82ae-ceb53679daa9)
+
+## Lab - Starting a exited container
+```
+docker ps
+docker ps -a
+docker start ubuntu3
+docker ps
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/4e3a505b-7b66-4661-8fad-5c1e6d9df2f0)
