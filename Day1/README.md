@@ -356,6 +356,7 @@ Expected output
 
 ## Lab - Getting inside container that is running in background
 ```
+docker ps
 docker exec -it ubuntu1 /bin/bash
 hostname
 hostname -i
