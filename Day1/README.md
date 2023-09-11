@@ -440,7 +440,7 @@ docker ps -a
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/d90a086a-bec0-4d88-a266-f831b0e5a2b4)
 
-## Lab - Deleting multiple containers forcibly without callling out their names
+## Lab - Deleting multiple containers forcibly without calling out their names
 ```
 docker run -dit --name ubuntu1 --hostname ubuntu1 ubuntu:22.04 /bin/bash
 docker run -dit --name ubuntu2 --hostname ubuntu2 ubuntu:22.04 /bin/bash
