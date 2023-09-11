@@ -94,6 +94,7 @@
 ![Hyper Architecture](HypervisorHighLevelArchitecture.png)
 
 ## Docker High-Level Architecture
+![Docker Architecture](DockerHighLevelArchitecture.png)
 
 ## What is Docker Local Registry?
 
