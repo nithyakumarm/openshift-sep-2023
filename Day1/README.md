@@ -185,3 +185,14 @@ Expected output
 
 Click on Explore link in the hub.docker.com website, you will get below page
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/1db5e123-6a98-4c2b-ac1a-ca682eba923f)
+
+## Lab - Download docker image from Docker Hub Remote Registry to Docker Local registry
+```
+docker pull mysql:latest
+docker images
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/e9d2409a-7fe9-44dd-81a7-c70565c25008)
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/941025cd-73fc-4d8d-b2f2-443b9f222a7a)
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/3f2b2001-b748-4b41-9371-e781fd77dd1a)
