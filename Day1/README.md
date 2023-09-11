@@ -391,6 +391,17 @@ docker ps
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/4e3a505b-7b66-4661-8fad-5c1e6d9df2f0)
 
+## Lab - Starting multiple containers
+```
+docker ps
+docker ps -a
+docker start ubuntu1 ubuntu2 ubuntu3
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/33bd8364-b53f-461c-8c94-530b63bb54d9)
+
+
 ## Lab - Stopping running containers
 ```
 docker ps
