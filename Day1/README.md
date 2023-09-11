@@ -16,6 +16,10 @@
 - supports running many Operating System on the same laptop/desktop/workstation/server
 - many OS can be active at the same time
 - hardware/software technology
+- Processors
+  - AMD (Advanced Micro Devices) - General Purpose Processors - Virtualization Feature is called AMD-V
+  - Intel - General Purpose Processors - Virtualization Feature - VT-X
+  - Apple Silicon(ARM Processor) - Embedded
 - there are 2 types
   - Type 1
     - Bare-metal hypervisor
@@ -32,7 +36,15 @@
     - Graphics Card
     - Network Card
 - each Virtual machine represents one fully functional Operating System
-  
+- Examples
+  - VMWare
+    - Fusion ( Mac OS-X )
+    - Workstation ( Linux & Windows )
+    - vSphere/vCenter - Bare-metal Hypervisors
+  - Oracle VirtualBox - Free works in Linux/Mac/Windows
+  - Parallels ( Mac OS-X )
+  - Microsoft Hyper-V
+ 
 ## What is Docker?
 
 ## Hypervisor High-Level Architecture
