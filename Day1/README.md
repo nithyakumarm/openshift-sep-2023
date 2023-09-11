@@ -588,3 +588,19 @@ curl http://localhost:80
 
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/0945663f-72be-4873-8b5e-9b974431ae2d)
+
+
+## Lab - Port Forwarding to access the web page hosted inside containers from other machines in the same network
+```
+docker rm -f $(docker ps -aq)
+docker run -d --name nginx1 --hostname nginx1 -p 8001:80 nginx:latest
+docker run -d --name nginx2 --hostname nginx2 -p 8002:80 nginx:latest
+docker run -d --name nginx3 --hostname nginx3 -p 8003:80 nginx:latest
+docker ps
+curl http://localhost:8001
+curl http://localhost:8002
+curl http://localhost:8003
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/38f01493-8f1f-489a-9484-57ca5f03836f)
