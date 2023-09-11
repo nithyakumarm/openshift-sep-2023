@@ -428,3 +428,14 @@ docker ps
 
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/922a5ca1-1c4e-416c-a3a2-6d0b9f272e86)
+
+## Lab - Deleting multiple containers gracefully without calling out their names
+```
+docker ps
+docker rm $(docker ps -q)
+docker stop $(docker ps -q) && docker rm $(docker ps -aq)
+docker ps -a
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/d90a086a-bec0-4d88-a266-f831b0e5a2b4)
