@@ -144,6 +144,15 @@
 - it has one application binary with all its dependent libraries pre-installed
 - it comes with basic minimum tools
 
+## What type of applications can be containerized?
+- Web Server
+- Application Server
+- DB servers
+- REST API
+- SOAP API
+- Message Queue Servers
+- Microservices, etc.,
+
 # Docker Commands
 
 ## Demo - Installing Docker CE in CentOS 7.9
