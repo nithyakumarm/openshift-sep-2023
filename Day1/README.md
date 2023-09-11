@@ -324,3 +324,13 @@ docker ps -a
 
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/fdd78e9e-bf8f-4807-acad-9208c26cce1f)
+
+## Lab - Creating containers and run them in the background
+```
+docker run -dit --name ubuntu1 --hostname ubuntu1 ubuntu:22.04 /bin/bash
+docker run -dit --name ubuntu2 --hostname ubuntu2 ubuntu:22.04 /bin/bash
+docker ps
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/c4276915-91ed-4fdb-9c4f-2a0744e98f52)
