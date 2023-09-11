@@ -544,3 +544,17 @@ docker logs mysql
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/f0fb56a2-56bb-443e-b605-6396911f0a99)
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/07e413bb-aab2-4bd3-a6b3-c02abb6a4aba)
+
+
+## Lab - Creating a Custom Docker Image with all the tools we need for our project
+```
+cd ~/openshift-sep-2023
+git pull
+cd Day1/CustomDockerImages
+docker build -t tektutor/ubuntu-with-maven:latest .
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/4de6a458-a135-437e-ba36-f32189a8da50)
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/a6d823a3-4dad-4884-b40b-daa370c034d0)
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/61e1630c-1f8f-4813-9fa6-a0feddc1ebba)
