@@ -679,4 +679,7 @@ Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/5d999404-5758-4a63-9586-51856fd69057)
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/9d4c50c3-082e-42f5-a9bf-deb5cf4fbb2d)
 
-
+## Please provide first day training feedback at the below URL
+<pre>
+https://tcheck.co/HzQlJ3  
+</pre>
