@@ -297,3 +297,14 @@ docker ps -a
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/aa640a48-c061-436f-9926-14cdebe68f96)
 
+
+## Lab - Renaming an existing container 
+```
+docker rename <old-name> <new-name>
+docker rename vigorous_panini hello1_container
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/bf9e99c7-27c6-4321-a7bf-bc57d207a890)
+
+
