@@ -478,6 +478,9 @@ Expected output
 
 ## Lab - List containers name that matches a name pattern
 ```
+docker ps -f "name=ubuntu"
+docker ps -f "name=centos"
+docker ps -f "name=c"
 ```
 
 Expected output
