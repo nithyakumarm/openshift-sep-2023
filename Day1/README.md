@@ -463,3 +463,15 @@ docker inspect -f {{.NetworkSettings.IPAddress}} ubuntu3
 
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/c7d349b8-5b1d-47f6-99f9-aba2724460ed)
+
+## Lab - Creating 3 centos containers
+```
+docker ps
+docker run -dit --name centos1 --hostname centos1 centos:centos7.9.2009 /bin/bash
+docker run -dit --name centos2 --hostname centos2 centos:centos7.9.2009 /bin/bash
+docker run -dit --name centos3 --hostname centos3 centos:centos7.9.2009 /bin/bash
+docker ps
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/b460edae-4526-413a-a39d-7f644ce20580)
