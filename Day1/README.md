@@ -15,6 +15,7 @@
 - is virtualization technology
 - supports running many Operating System on the same laptop/desktop/workstation/server
 - many OS can be active at the same time
+- hardware/software technology
 - there are 2 types
   - Type 1
     - Bare-metal hypervisor
@@ -23,7 +24,15 @@
   - Type 2
     -  For laptops/desktops/workstations
     -  requires Host OS ( could be any of these OS - Unix, Linux, Mac or Windows )
-
+- this type of virtualization is called heavy-weight virtualization
+  - because each Virtual machine has to be allocated with dedicated hardware resources
+    - CPU Cores
+    - RAM
+    - Storage - Hard disk
+    - Graphics Card
+    - Network Card
+- each Virtual machine represents one fully functional Operating System
+  
 ## What is Docker?
 
 ## Hypervisor High-Level Architecture
