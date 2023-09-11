@@ -390,3 +390,15 @@ docker ps
 
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/4e3a505b-7b66-4661-8fad-5c1e6d9df2f0)
+
+## Lab - Stopping running containers
+```
+docker ps
+docker stop ubuntu1
+docker ps
+docker stop ubuntu2 ubuntu3
+docker ps -a
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/a238356b-538c-48b1-bf60-e5aa6a25a46b)
