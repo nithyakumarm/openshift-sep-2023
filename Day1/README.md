@@ -575,3 +575,16 @@ exit
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/96d1a156-d442-4d01-ab5c-266ddb596005)
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/f0f7178b-f8c0-42ff-b283-ff49272ca7db)
+
+
+## Lab - Creating a nginx web server container
+```
+docker rm -f $(docker ps -aq)
+docker run -d --name nginx1 --hostname nginx1 nginx:latest
+docker ps
+docker inspect -f {{.NetworkSettings.IPAddress}} nginx1
+curl http://localhost:80
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/0945663f-72be-4873-8b5e-9b974431ae2d)
