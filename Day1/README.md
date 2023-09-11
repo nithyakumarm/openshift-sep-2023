@@ -293,3 +293,7 @@ If you wish to see all containers even if they aren't running
 ```
 docker ps -a
 ```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/aa640a48-c061-436f-9926-14cdebe68f96)
+
