@@ -485,3 +485,13 @@ docker ps -f "name=c"
 
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/d69d5d3b-516d-4de1-a1dc-b94cdcf2202b)
+
+## Lab - Listing all containers whose image name matches a given value
+```
+docker ps | grep centos:centos7.9.2009
+docker ps | grep ubuntu:22.04
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/8ec7334d-1887-4df7-b50f-f955556f4103)
+
