@@ -166,7 +166,8 @@ Docker version 20.10.25+dfsg1, build b82b9f3
 </pre>
 
 ## Lab - Listing docker images in your local docker registry
-```
+```20.10.25+dfsg1, build b82b9f3
+
 docker images
 ```
 
@@ -181,3 +182,6 @@ http://hub.docker.com
 
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/e98c7a4f-6706-46dd-90d7-1abb3e41cf59)
+
+Click on Explore link in the hub.docker.com website, you will get below page
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/1db5e123-6a98-4c2b-ac1a-ca682eba923f)
