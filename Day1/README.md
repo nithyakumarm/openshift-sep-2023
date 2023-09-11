@@ -133,5 +133,14 @@
 - in other words, it is a specification of Docker container
 
 ## What is Docker Container?
-
+- running instance of a Docker Image
+- each container represents one application
+- container is not OS
+- container has its own file sytem
+- container has its own port range ( 0 - 65535 )
+- container has its own network stack ( 7 OSI Layers )
+- container has its own virtual network card
+- container has its own Private IP address
+- it has one application binary with all its dependent libraries pre-installed
+- it comes with basic minimul tools
 
