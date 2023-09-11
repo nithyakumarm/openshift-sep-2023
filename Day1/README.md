@@ -91,6 +91,7 @@
 - Docker depends on containerd which depends on Container Runtime called runC
 
 ## Hypervisor High-Level Architecture
+![Hyper Architecture](HypervisorHighLevelArchitecture.png)
 
 ## Docker High-Level Architecture
 
