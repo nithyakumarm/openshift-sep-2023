@@ -325,15 +325,7 @@ Expected output
 ## Lab - Checking on which node the pods are running
 ```
 oc get po -o wide
-```apiVersion: metallb.io/v1alpha1
-kind: AddressPool
-metadata:
-  namespace: metallb-system
-  name: tektutor-metallb-addresspool
-spec:
-  protocol: layer2
-  addresses:
-  - 192.168.122.90-192.168.122.100
+```
 
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/39597bf3-d084-4535-9353-0339e55243d2)
@@ -464,5 +456,3 @@ curl http://192.168.122.50:8080
 
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/ab6d55ce-8318-4be9-8be5-17be8fd55af2)
-
-
