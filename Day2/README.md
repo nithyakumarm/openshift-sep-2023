@@ -125,3 +125,13 @@ oc get nodes -o wide
 
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/d2b54323-46b2-4776-b8d7-7de1db3e4c0b)
+
+## Lab - Editing node details
+```
+oc edit node/master-1.ocp.tektutor-ocp-labs
+```
+
+Expected output
+
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/3e7693dd-e4fa-4333-a578-5f00505b7e1a)
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/bfc95351-4d11-44a5-9310-945a2affa3d2)
