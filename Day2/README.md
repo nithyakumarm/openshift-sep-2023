@@ -426,3 +426,7 @@ The 192.168.122.62 is the IP address of the master-1 node, we could access the n
 
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/4f4aa593-7d41-4c7e-81a4-6eb352ce1ede)
+
+
+## Lab - Installing MetalLB Operator in Red Hat OpenShift Cluster
+https://medium.com/tektutor/using-metallb-loadbalancer-with-bare-metal-openshift-onprem-4230944bfa35
