@@ -453,7 +453,7 @@ oc describe svc/nginx
 ```
 
 Expected output
-![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/c915e39a-cd87-4ae4-b886-07b64e464724)
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/9b1fce8c-ac9f-4605-a1de-63fb518367a4)
 
 Accessing the nginx web page
 ```
@@ -463,6 +463,6 @@ curl http://192.168.122.50:8080
 ```
 
 Expected output
-![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/fbff6d03-2cde-4356-9c0c-3e8920d4e42c)
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/ab6d55ce-8318-4be9-8be5-17be8fd55af2)
 
 
