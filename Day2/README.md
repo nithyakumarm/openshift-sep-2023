@@ -268,7 +268,9 @@ Let's try to create nginx deployment with bitnami/nginx:latest docker image.
 ```
 oc create deployment/nginx --image=bitnami/nginx:latest
 oc get deployments/replicasets,pods
+oc get all
 ```
 
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/4f78afc1-1832-45f7-a3db-243ec714ccb2)
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/cdb6c3bf-4688-464c-95ad-fc49046d3057)
