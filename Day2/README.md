@@ -337,3 +337,18 @@ oc rsh deploy/nginx
 
 Expected ouput
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/5c3a1af7-77e6-49f3-81c9-137aa1ac8a17)
+
+## Lab - Getting inside a particular Pod
+```
+oc get po
+oc exec -it nginx-5bccb79775-hlvzg sh
+ls
+exit
+kubectl exec -it nginx-5bccb79775-hlvzg sh
+ls
+cat index.html
+exit
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/9de45df3-8a80-4326-935f-a218100b63d6)
