@@ -452,8 +452,17 @@ oc get svc
 oc describe svc/nginx
 ```
 
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/c915e39a-cd87-4ae4-b886-07b64e464724)
+
 Accessing the nginx web page
 ```
 curl http://<nginx-service-external-ip>:8080
+
+curl http://192.168.122.50:8080
 ```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/fbff6d03-2cde-4356-9c0c-3e8920d4e42c)
+
 
