@@ -352,3 +352,15 @@ exit
 
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/9de45df3-8a80-4326-935f-a218100b63d6)
+
+## Lab - Choosing a specific container while opening a shell in Pod
+```
+oc exec -it -c nginx nginx-5bccb79775-hlvzg sh
+ls
+cat index.html
+exit
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/d091e5ea-1978-470f-82a8-822020308cc4)
+
