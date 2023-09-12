@@ -65,6 +65,8 @@ ExamplesL:-
 
 ## Red Hat OpenShift
 - Red Hat OpenShift is developed on top of Google Kubernetes
+- it is an enterprise product, we need buy license to use it
+- Red Hat(an IBM company) provides world-wide support
 - supports all features of Kubernetes
 - also supports many additional features
 - the additional features are added by using Kubernetes Custom Resource Definition (CRD)
