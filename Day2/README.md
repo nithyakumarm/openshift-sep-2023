@@ -174,6 +174,11 @@ exit
 - the reason is, nginx container shares the network of nginx_pause container
 - every Pod created in Kubernetes/OpenShift, there is always a secret infra-container called pause container apart from the main application container
 
+### Best Practices
+- though technically only one Pod many have many main application containers, ideally we should only create one main application per Pod
+- the reason is, if we allow many main application containers per Pod, we won't be able to scale up/down one main applciation container independent of other main application containers
+- ideally we should create two separate pod for two main applications, so that we scale them independent of each other
+
 ## Lab - Listing OpenShift nodes
 ```
 oc get nodes
