@@ -218,3 +218,14 @@ Expected output
 
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/3e7693dd-e4fa-4333-a578-5f00505b7e1a)
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/bfc95351-4d11-44a5-9310-945a2affa3d2)
+
+## Lab - Creating a project in OpenShift
+You need to replace 'jegan' with your name to avoid conflicts the lab machine.
+```
+oc new-project jegan
+oc project
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/6d72d455-5104-4207-832c-b947ec25ac34)
+
