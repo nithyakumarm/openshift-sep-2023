@@ -88,6 +88,12 @@ ExamplesL:-
 - TekTon is a cloud-native server-less CI/CD framework that works within Kubernetes/OpenShift
 - It is a competing product, which is alternate for Jenkins/Cloudbees/Team City/Bamboo/TFS, etc.,
 
+## Kubernetes/OpenShift tools
+- kubelet - Container Agent that interacts with CRI-O Runtime via Container Runtime Interface (CRI)
+- kubeadm - administrative tool used to bootstrap master node and add/remove worker nodes to the OpenShift cluster
+- kubectl - kubernetes client tool also supported in OpenShift
+- oc - OpenShift native client tool used by users to interact with OpenShift cluster to manage containerized application workloads
+
 # OpenShift commands
 
 ## Lab - Listing OpenShift nodes
