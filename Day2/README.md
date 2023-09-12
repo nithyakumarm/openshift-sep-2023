@@ -329,3 +329,11 @@ oc get po -o wide
 
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/39597bf3-d084-4535-9353-0339e55243d2)
+
+## Lab - Opening a terminal one a container running inside a Pod
+```
+oc rsh deploy/nginx
+```
+
+Expected ouput
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/5c3a1af7-77e6-49f3-81c9-137aa1ac8a17)
