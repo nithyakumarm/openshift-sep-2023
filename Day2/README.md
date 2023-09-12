@@ -294,3 +294,13 @@ Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/e2f4438c-f8ec-4b39-af58-cf2802782a39)
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/4c8f6782-dbbe-4e93-a5ac-24ca4fc76578)
 
+## Lab - Scale up nginx deployment
+```
+oc scale deploy/nginx --replicas=5
+oc get po -w
+oc get po
+```
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/6280c572-dd4f-4871-b2cb-80305f5a663c)
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/48c71c38-dd42-429b-984b-6d124440bcb8)
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/15564128-17e9-4fa9-b72d-a9b63aa33665)
