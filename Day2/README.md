@@ -399,3 +399,14 @@ oc describe svc/nginx
 
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/73c563b4-d265-4077-86d3-b808eb5361fc)
+
+## Lab - Creating an external nodeport service imperatively
+```
+oc delete svc/nginx
+oc get services
+
+oc expose deploy/nginx --type=NodePort --port=8080
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/6d149a2c-a777-44a9-8fc3-ae344f6d9b61)
