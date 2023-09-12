@@ -170,7 +170,7 @@ exit
 
 ### Things to notice 
 - the IP address of nginx_pause container and nginx containers are same.
-- though we never assigned a hostname for the nginx container, the nginx container hostname is nginx
+- though we never assigned a hostname for the nginx container, the nginx container's hostname is nginx
 - the reason is, nginx container shares the network of nginx_pause container
 - every Pod created in Kubernetes/OpenShift, there is always a secret infra-container called pause container apart from the main application container
 
