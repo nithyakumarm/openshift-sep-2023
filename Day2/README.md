@@ -262,3 +262,13 @@ oc delete deploy/nginx
 
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/c0d4150d-b152-43d8-9a46-3bb37cee7bb4)
+
+
+Let's try to create nginx deployment with bitnami/nginx:latest docker image.
+```
+oc create deployment/nginx --image=bitnami/nginx:latest
+oc get deployments/replicasets,pods
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/4f78afc1-1832-45f7-a3db-243ec714ccb2)
