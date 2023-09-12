@@ -401,6 +401,9 @@ Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/73c563b4-d265-4077-86d3-b808eb5361fc)
 
 ## Lab - Creating an external nodeport service imperatively
+
+For Node Port Services, Kubernetes/OpenShift has reserved ports between 30000 to 32767, whichever node in that range is available on all your openshift nodes that will be randomly picked by OpenShift and assigned for your Node Port service.
+
 ```
 oc delete svc/nginx
 oc get services
