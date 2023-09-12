@@ -48,6 +48,8 @@ ExamplesL:-
 - highly stable, capable of handling complex, resource hungry applications without any hassle
 - It also supports extending Kubernetes features via Custom Resource Definitions (CRD)
 - The container orchestration features are implemented as REST API
+- Kubernetes supports many different Container Engines and Container Runtimes that supports/implemented Container Runtime Interface(CRI)
+- Installing Kubernetes is relatively easier compared to Red Hat OpenShift
 - The below are some of the Kubernetes Resources
   - Deployment
   - ReplicaSet
@@ -74,6 +76,13 @@ ExamplesL:-
 - it supports both command-line and Web Console
 - it supports User Management
 - We could even deploy Jenkins within OpenShift
+- Older version of OpenShift upto 3.x supported Docker, starting from OpenShift 4.x support for Docker was removed
+- Only supports Podman Container Engine with CRI-O Container Runtime
+- Installing Red Hat OpenShift is very complex compared to Kubernetes
+- Starting from OpenShift 4.x, the operating sytem supported with Nodes/Servers is limited to Red Hat Enterprise Linux or Red Hat Enterprise Core OS
+- Master Nodes only supports Red Hat Enterpise Core OS
+- Worker Nodes have two choices
+  - They could either use Red Hat Enterprise Linux (RHEL) or Red Hat Enterpise Core OS (RHCOS)
 
 ## CI/CD with Kubernetes/OpenShift
 - TekTon is a cloud-native server-less CI/CD framework that works within Kubernetes/OpenShift
