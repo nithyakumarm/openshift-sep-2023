@@ -380,3 +380,12 @@ oc describe po/nginx-5bccb79775-h42vx
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/2825718e-3f2e-4702-b82a-1278c2154e28)
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/c5def75e-d4ca-4ef4-8126-6d10c78fa8ca)
+
+
+## Lab - Port-forwarding a Pod to access the nginx web page ( Meant for Testing purpose )
+```
+oc port-forward pod/nginx-5bccb79775-8xnsv 8001:8080
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/4770678c-10a3-43d1-91cb-8d1851f40ac1)
