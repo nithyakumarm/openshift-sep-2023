@@ -229,3 +229,15 @@ oc project
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/6d72d455-5104-4207-832c-b947ec25ac34)
 
+
+## Lab - Creating our first application deployment into OpenShift
+```
+oc project jegan
+oc create deployment nginx --image=nginx:latest
+oc get deployments
+oc get repilcasets
+oc get pods
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/16aedb29-1e39-4b20-8c81-699036f1105a)
