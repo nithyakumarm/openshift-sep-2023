@@ -147,8 +147,25 @@ ExamplesL:-
 - Pods are managed by ReplicaSet Controller
 - the smallest unit that can be deployed and managed is Pod
 - generally deploying a Pod directly is not the recommended practice but is possible
+
+
   
 # OpenShift commands
+
+## Lab - Creating a Pod in Docker
+```
+docker pull google/pause:latest
+docker images
+docker run -d --name nginx_pause --hostname nginx google/pause:latest
+docker ps
+docker inspect nginx_pause | grep IPA
+
+docker run -d --name nginx --network=container:nginx_pause nginx:latest
+docker ps
+docker exec -it nginx sh
+hostname
+hostname -i
+```
 
 ## Lab - Listing OpenShift nodes
 ```
