@@ -364,3 +364,10 @@ exit
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/d091e5ea-1978-470f-82a8-822020308cc4)
 
+## Info - What happens in OpenShift cluster when we create a deployment
+```
+oc create deployment nginx --image=bitnami/nginx:latest --replicas=3
+```
+
+![deployment](deployment.png)
+
