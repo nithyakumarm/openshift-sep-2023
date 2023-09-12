@@ -313,3 +313,11 @@ oc get po -w
 
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/35f79456-16fb-41a6-846b-b05e28beef53)
+
+## Lab - Pods are managed by ReplicaSetController
+```
+oc describe rs/nginx-5bccb79775
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/4cd910cc-20a3-43ad-af64-182cbab06802)
