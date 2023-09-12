@@ -325,7 +325,15 @@ Expected output
 ## Lab - Checking on which node the pods are running
 ```
 oc get po -o wide
-```
+```apiVersion: metallb.io/v1alpha1
+kind: AddressPool
+metadata:
+  namespace: metallb-system
+  name: tektutor-metallb-addresspool
+spec:
+  protocol: layer2
+  addresses:
+  - 192.168.122.90-192.168.122.100
 
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/39597bf3-d084-4535-9353-0339e55243d2)
@@ -434,4 +442,18 @@ https://medium.com/tektutor/using-metallb-loadbalancer-with-bare-metal-openshift
 Login to your Red Hat OpenShift webconsole from CentOS web browser
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/52e7d25f-91bc-45d5-8396-c6d1fdfe961b)
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/13263ce3-d83b-4f09-9e8b-276c0032443c)
+
+## Lab - Creating LoadBalancer external service
+```
+oc delete svc/nginx
+oc get deploy
+oc expose deploy/nginx --type=LoadBalancer --port=8080
+oc get svc
+oc describe svc/nginx
+```
+
+Accessing the nginx web page
+```
+curl http://<nginx-service-external-ip>:8080
+```
 
