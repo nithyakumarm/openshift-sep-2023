@@ -430,3 +430,8 @@ Expected output
 
 ## Lab - Installing MetalLB Operator in Red Hat OpenShift Cluster
 https://medium.com/tektutor/using-metallb-loadbalancer-with-bare-metal-openshift-onprem-4230944bfa35
+
+Login to your Red Hat OpenShift webconsole from CentOS web browser
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/52e7d25f-91bc-45d5-8396-c6d1fdfe961b)
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/13263ce3-d83b-4f09-9e8b-276c0032443c)
+
