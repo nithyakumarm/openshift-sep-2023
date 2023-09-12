@@ -241,3 +241,24 @@ oc get pods
 
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/16aedb29-1e39-4b20-8c81-699036f1105a)
+
+You would observed that the Pod keeps crashing and OpenShift is keep attempting to repair it by restarting the Pod.
+
+Let us check pod log to understand the root cause of the Pod crash
+```
+oc get pods
+oc logs nginx-654975c8cd-rjxlg
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/7581317f-e104-4bdd-9aff-b02275958468)
+
+From the above log, we can understand that the container image nginx:latest from Docker Hub portal is attempting to create a folder under /var folder, which isn't allowed in Red Hat Enterprise Core OS. Hence, we can't use the nginx:latest container image to deploy nginx in OpenShift, but the same image will work perfectly in Kubernetes Orchestration Platform.
+
+Let's delete the nginx deployment
+```
+oc delete deploy/nginx
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/c0d4150d-b152-43d8-9a46-3bb37cee7bb4)
