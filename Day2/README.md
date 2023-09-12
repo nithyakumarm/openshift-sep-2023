@@ -25,8 +25,53 @@
   - It not only observes instability in user application workloads, it is also capable of repairing it own components when they are non-responsive or when they crash
 ExamplesL:-
 1. Docker SWARM
-2. Google Kubernetes
+2. Kubernetes
 3. Red Hat OpenShift
+
+## Docker SWARM
+- it is native orchestration platform developed and maintained by Docker Inc organization
+- it only supports managing docker containers
+- it is not production-grade, hence not many companies use them in production, they good for learning and prototypes or testing in Dev/QA environment
+- it is very light-weight, hence can be easily installed even on a normal laptop
+- It is free for personal and commercial use
+
+## Kubernetes
+- it is developed by Google and donated to open source community
+- it is still backed by Google along with many opensource contributers
+- it is developed in Go lang
+- it is opensource
+- supports command-line
+- there is a web based Dashboard, but it is not production grade, it is not secure
+- it is time tested, as Google internally used this several years before they made it opensource
+- it is production grade
+- it is used by many companies of different size in different domanin
+- highly stable, capable of handling complex, resource hungry applications without any hassle
+- It also supports extending Kubernetes features via Custom Resource Definitions (CRD)
+- The container orchestration features are implemented as REST API
+- The below are some of the Kubernetes Resources
+  - Deployment
+  - ReplicaSet
+  - Pod
+  - Job
+  - CronJob
+  - DaemonSet
+  - StatefulSet
+  - Services
+    1. ClusterIP
+    2. NodePort
+    3. Load Balancer
+  - Custom Resource Definition (CRD)
+  - Ingress 
+
+## Red Hat OpenShift
+- Red Hat OpenShift is developed on top of Google Kubernetes
+- supports all features of Kubernetes
+- also supports many additional features
+- the additional features are added by using Kubernetes Custom Resource Definition (CRD)
+- it is production grade
+- it supports both command-line and Web Console
+- it supports User Management
+  
 
 # OpenShift commands
 
