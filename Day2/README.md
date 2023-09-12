@@ -94,6 +94,60 @@ ExamplesL:-
 - kubectl - kubernetes client tool also supported in OpenShift
 - oc - OpenShift native client tool used by users to interact with OpenShift cluster to manage containerized application workloads
 
+## What is a Kubernetes/OpenShift Controller?
+- Controller is a application that monitors a particular type of Kubernetes/OpenShift resource
+- Controller ensures the desired count and actual count of resources are same
+- Controller are the one which provides monitoring functionality to the Container Orchestration Platform
+- To manage every of Kuberenetes/Openshift resource there is one type of Controller
+- Examples
+  - Deployment Controller
+  - ReplicaSet Controller
+  - Endpoint Controller
+  - DaemonSet Controller
+  - StatefulSet Controller
+  - Job Controller 
+
+## What is Deployment Controller?
+- Deployment Controller receives notification events anytime something changes in Deployment
+  - New Deployment Created
+  - Deployment updated
+  - Deployment deleted
+- Deployment Controller is the one that manages ReplicaSet resource
+
+## What is ReplicatSet Controller?
+- ReplicaSet Controller receives notification events anytime something changes in ReplicaSet
+  - New ReplicaSet created
+  - ReplicaSet updated
+  - ReplicaSet deleted
+- ReplicaSet Controller is the one that manages the Pod resources
+  
+## What is a Deployment?
+- when application are deployed in Kubernetes/OpenShift, they are deployed as Deployment
+- Deployment resources contains the following
+  - name of the deployment
+  - the container image that must be used in the Pod
+  - the number of Pod instances that be created as part of the deployment
+
+## What is a ReplicaSet?
+- is a configuration that tells how many Pod instances are supposed to be running as part of a appliction deployment
+- There would be
+  - desired count of Pods
+  - actual count of Pods
+  - ReplicaSet is referred by ReplicaSet controller to create/manage the number of Pod instances
+  - The ReplicaSet controller keeps monitors the number of actual Pods vs desider count of Pods, whenever it sees a different it acts to match the number of desired pod count with the actual count
+
+## What is a Pod?
+- Pod is a group of related containers
+- one Pod represents one application
+- In Kubernetes/OpenShift IP address is assigned on the Pod level
+- Containers in the same Pod shares the IP address
+- As per Best practices, only one main application should part of one Pod
+- One Container per Pod is the recommended practice
+- User application will be running in one of the container within Pod
+- Pods are managed by ReplicaSet Controller
+- the smallest unit that can be deployed and managed is Pod
+- generally deploying a Pod directly is not the recommended practice but is possible
+  
 # OpenShift commands
 
 ## Lab - Listing OpenShift nodes
