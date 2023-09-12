@@ -371,3 +371,11 @@ oc create deployment nginx --image=bitnami/nginx:latest --replicas=3
 
 ![deployment](deployment.png)
 
+
+## Lab - Describe pod
+```
+oc describe po/nginx-5bccb79775-h42vx
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/2825718e-3f2e-4702-b82a-1278c2154e28)
