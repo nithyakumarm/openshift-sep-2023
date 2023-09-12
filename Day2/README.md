@@ -321,3 +321,11 @@ oc describe rs/nginx-5bccb79775
 
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/4cd910cc-20a3-43ad-af64-182cbab06802)
+
+## Lab - Checking on which node the pods are running
+```
+oc get po -o wide
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/39597bf3-d084-4535-9353-0339e55243d2)
