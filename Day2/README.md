@@ -390,3 +390,12 @@ oc port-forward pod/nginx-5bccb79775-8xnsv 8001:8080
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/459c955d-3b52-493e-85a3-569f6dc17023)
 
+## Lab - Creating an internal ClusterIP service imperatively
+```
+oc get po -o wide
+oc expose deploy/nginx --type=ClusterIP --port=8080
+oc describe svc/nginx
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/73c563b4-d265-4077-86d3-b808eb5361fc)
