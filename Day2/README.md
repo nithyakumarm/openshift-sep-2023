@@ -410,3 +410,16 @@ oc expose deploy/nginx --type=NodePort --port=8080
 
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/6d149a2c-a777-44a9-8fc3-ae344f6d9b61)
+
+Accessing the external NodePort service
+```
+oc get nodes -o wide
+curl http://192.168.122.62:30079
+curl http://master-2.ocp.tektutor-ocp-labs:30079
+curl http://worker-2.ocp.tektutor-ocp-labs:30079
+```
+In the above command, 30079 is the Node Port opened by OpenShift on every node in the openshift cluster.
+The 192.168.122.62 is the IP address of the master-1 node, we could access the node port service from any node in the cluster.
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/4f4aa593-7d41-4c7e-81a4-6eb352ce1ede)
