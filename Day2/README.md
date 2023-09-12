@@ -105,3 +105,12 @@ oc version
 
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/d2b210c3-6450-4573-9b38-4a0e3642eed9)
+
+## Lab - Finding more details about a node
+```
+oc get nodes
+oc describe node master-1.ocp.tektutor-ocp-labs
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/ddb8abf4-a4d3-41c2-b316-0ba26036afb8)
