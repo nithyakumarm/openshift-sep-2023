@@ -23,6 +23,10 @@
 - In a production grade setup, many Master Nodes will be available to ensure if one Master stops responding other Master would be available to keep the cluster responsive
 - Self-healing Platform
   - It not only observes instability in user application workloads, it is also capable of repairing it own components when they are non-responsive or when they crash
+ExamplesL:-
+1. Docker SWARM
+2. Google Kubernetes
+3. Red Hat OpenShift
 
 # OpenShift commands
 
