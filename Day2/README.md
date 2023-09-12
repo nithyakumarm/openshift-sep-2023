@@ -71,7 +71,11 @@ ExamplesL:-
 - it is production grade
 - it supports both command-line and Web Console
 - it supports User Management
-  
+- We could even deploy Jenkins within OpenShift
+
+## CI/CD with Kubernetes/OpenShift
+- TekTon is a cloud-native server-less CI/CD framework that works within Kubernetes/OpenShift
+- It is a competing product, which is alternate for Jenkins/Cloudbees/Team City/Bamboo/TFS, etc.,
 
 # OpenShift commands
 
