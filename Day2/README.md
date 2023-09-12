@@ -117,3 +117,11 @@ Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/e15755c1-6e29-47f5-85c0-e0cb47cd4cee)
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/0ff48c99-aec5-4062-a6f0-2aa78b68ab53)
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/2b39dca1-659e-46bd-8b8b-005c22c51fe3)
+
+## Lab - Finding IP address of node, OS installed in node, Container Runtime installed in node with wide mode
+```
+oc get nodes -o wide
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/d2b54323-46b2-4776-b8d7-7de1db3e4c0b)
