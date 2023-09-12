@@ -379,3 +379,4 @@ oc describe po/nginx-5bccb79775-h42vx
 
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/2825718e-3f2e-4702-b82a-1278c2154e28)
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/c5def75e-d4ca-4ef4-8126-6d10c78fa8ca)
