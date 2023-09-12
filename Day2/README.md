@@ -274,3 +274,23 @@ oc get all
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/4f78afc1-1832-45f7-a3db-243ec714ccb2)
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/cdb6c3bf-4688-464c-95ad-fc49046d3057)
+
+## Lab - Using plural form, singular form and short form Kubernetes/OpenShift commands
+```
+oc get pods
+oc get pod
+oc get po
+
+oc get replicasets
+oc get replicaset
+oc get rs
+
+oc get deployments
+oc get deployment
+oc get deploy
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/e2f4438c-f8ec-4b39-af58-cf2802782a39)
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/4c8f6782-dbbe-4e93-a5ac-24ca4fc76578)
+
