@@ -388,4 +388,5 @@ oc port-forward pod/nginx-5bccb79775-8xnsv 8001:8080
 ```
 
 Expected output
-![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/4770678c-10a3-43d1-91cb-8d1851f40ac1)
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/459c955d-3b52-493e-85a3-569f6dc17023)
+
