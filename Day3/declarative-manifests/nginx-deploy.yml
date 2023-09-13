@@ -15,5 +15,5 @@ spec:
         app: nginx
     spec:
       containers:
-      - image: bitnami/nginx:latest
+      - image: bitnami/nginx:1.25
         name: nginx
