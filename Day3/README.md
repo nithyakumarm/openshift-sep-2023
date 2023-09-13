@@ -179,3 +179,11 @@ oc get po
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/d2c2c6ea-7360-4e5f-8062-e9ece0d0b594)
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/0152e29c-9265-4e30-9b3c-f75d37874e42)
+
+Rolling back from 1.25 to 1.24
+```
+oc rollout undo deploy/nginx
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/a5926b72-c46e-48f0-9fc4-003aeba9b175)
