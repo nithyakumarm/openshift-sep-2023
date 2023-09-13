@@ -209,3 +209,14 @@ oc expose deploy/nginx --type=ClusterIP --port=8080 --dry-run=client -o yaml > n
 Expected output
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/f3e20d12-9d76-4004-949e-7367b17b1e20)
+
+Let's create the ClusterIP Internal service using the yaml file
+```
+cd ~/openshift-sep-2023
+git pull
+cd Day3/declarative-manifests
+oc create -f nginx-clusterip-svc.yml --save-config
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/fd57f149-9d7a-4750-b0e1-e8f5d6d5a0b8)
