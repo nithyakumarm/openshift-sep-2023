@@ -434,4 +434,5 @@ From the OpenShift webconsole
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/21a5f423-368d-45a4-9496-fca3031afdac)
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/a1a74f80-ae27-4280-ab17-a1706a2e2e61)
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/51b0fb56-fd9d-4963-9b33-3fbe3907ba0f)
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/7ab8937a-1b9a-4300-b9a1-f76933b3f499)
 
