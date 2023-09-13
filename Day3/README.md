@@ -43,6 +43,14 @@ oc get svc --all-namespaces | grep -i dns
 oc describe svc/dns-default -n openshift-dns
 ```
 
+## Lab - Getting help info about any OpenShift resource
+```
+oc explain deployment
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/c3c2987d-c97a-4a5c-a429-f90a827dbf1e)
+
 ## Lab - Declaratively creating nginx deployment
 
 Let's delete the project and recreate project with the same name
@@ -61,5 +69,7 @@ cat nginx-deploy.yml
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/00e300a2-6bb2-4073-beee-9e8f0c6d089b)
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/b4a7bc1f-dc59-41c6-8f9d-0705f218b307)
+
+
 
 
