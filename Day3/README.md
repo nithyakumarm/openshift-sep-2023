@@ -70,6 +70,16 @@ Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/00e300a2-6bb2-4073-beee-9e8f0c6d089b)
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/b4a7bc1f-dc59-41c6-8f9d-0705f218b307)
 
+## Lab - Creating a nginx deployment in declarative style using yaml(manifest) file
+```
+cd ~/openshift-sep-2023
+git pull
+cd Day3/declarative-manifests
+oc create -f nginx-deploy.yml --save-config
+oc create -f nginx-deploy.yml --save-config
+oc apply -f nginx-deploy.yml
+oc get deploy,rs,po
+```
 
-
-
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/b77f5eec-df2f-4542-a511-f92b9a5007c4)
