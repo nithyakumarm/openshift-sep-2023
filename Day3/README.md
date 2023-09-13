@@ -360,3 +360,18 @@ curl http://nginx-jegan.apps.ocp.tektutor-ocp-labs:80
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/dc6eacc2-bfdb-4a6c-ae01-5da91f0d4f41)
 
+
+## Lab - Creating a Pod without replicaset/deployment
+
+### Things to Note
+- Creating a Pod without replicaset/deployment is considered a bad practice
+- In case the Pod crashes, as there is no replicaset to monitor and repair, we need to manually fix the error
+- Hence, this must be done only for testing purpose and not in production
+
+```
+oc run hello --image=tektutor/spring-tektutor-helloms:latest
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/39f4ae31-6d9f-49ce-a48d-a470006382d7)
+
