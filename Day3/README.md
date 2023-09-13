@@ -306,4 +306,32 @@ There are 3 types of Services in Kubernetes/OpenShift
 - There is a cost implication each time you create a LoadBalancer Service in public cloud, as the public cloud vendor will charge on monthly basis for the LoadBalancer service
 - Loadbalancer also gets allocation one unique static ip, which is accessible over Internet, hence only one person/company can own that unique static ip, so there is a cost from static ip as well
 
-  
+
+## Lab - Creating a external route as an alternate for NodePort service
+
+Let's delete the existing lb service
+```
+cd ~/openshift-sep-2023
+git pull
+cd Day3/declarative-manifests
+oc delete -f nginx-lb-svc.yml
+```
+
+Let's create a ClusterIP Internal Service
+```
+cd ~/openshift-sep-2023
+git pull
+cd Day3/declarative-manifests
+oc apply -f nginx-clusterip-svc.yml
+```
+
+Let's expose the service via route to make it accessible outside the cluster with a public url
+```
+oc expose svc/nginx --dry-run=client -o yaml > nginx-route.yml
+cat nginx-route.yml
+oc create -f nginx-route.yml --save-config
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/b8a126f3-6c16-4bb6-a8d6-382093c8a82f)
+
