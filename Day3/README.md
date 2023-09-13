@@ -187,3 +187,11 @@ oc rollout undo deploy/nginx
 
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/a5926b72-c46e-48f0-9fc4-003aeba9b175)
+
+To cross-check what image version the nginx pods are using after rollback, you can try the below command
+```
+oc edit pod/nginx-669d5c7ff9-qzt7k
+```
+
+Expected outt
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/aa46cbc2-3457-4a40-943e-6edf8575dbe8)
