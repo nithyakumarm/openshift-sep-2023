@@ -231,12 +231,14 @@ Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/61a4686f-320c-454a-964d-4ecb35149560)
 
 You could create the nodeport sevice as shown below
+```
 cd ~/openshift-sep-2023
 git pull
 cd Day3/declarative-manifests
 oc apply -f nginx-nodeport-svc.yml
 oc get svc
 oc describe svc/nginx
+```
 
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/671324f7-7c68-440f-9f21-b79909d3816a)
