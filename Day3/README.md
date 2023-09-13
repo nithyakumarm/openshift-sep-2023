@@ -407,7 +407,7 @@ Expected output
 
 ## Lab - Deploying a Wordpress and MySQL multi-pod application that uses external storage
 
-![Wordpress](Wordpress.png)
+![Wordpress](WordPress.png)
 
 ```
 cd ~/openshift-sep-2023
