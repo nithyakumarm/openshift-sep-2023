@@ -124,3 +124,58 @@ Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/216b40c2-ae8e-4260-a9b0-3b297ea5017f)
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/4bb2805c-81dc-4c3d-9b7b-edf0137870d0)
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/16a1dfdf-13fa-47c0-8bdb-8e5479433617)
+
+## Lab - Using Rolling update to upgrade your live application from one version to other without downtime
+
+First you can delete the nginx deploy that is already running in the cluster.
+```
+cd ~/openshift-sep-2023
+git pull
+cd Day3/declarative-manifests
+
+oc delete -f nginx-deploy.yml
+```
+
+Then update the image in the nginx-deploy.yml from "bitnami/nginx:latest" to "bitnami/nginx:1.23" and save it.
+You can now apply/create this change into the cluster
+```
+cd ~/openshift-sep-2023
+git pull
+cd Day3/declarative-manifests
+cat nginx-deploy.yml
+oc get deploy
+oc apply -f nginx-deploy.yml
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/6690b72a-401b-4ece-8421-dc2e633189af)
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/6c66ef09-81cc-4cd1-b7bb-a857380fcf31)
+
+Checking the rolling update status
+```
+oc rollout status deploy/nginx
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/1c56fb04-46ef-42d6-9ec1-1037bc8f2afb)
+
+
+Checking the rolling update revision history
+```
+oc rollout history deploy/nginx
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/829a0f9e-a29d-4277-b4a9-8069479c5b92)
+
+Let's update the image version from 1.24 to 1.25
+```
+cat nginx-deploy.yml
+oc apply -f nginx-deploy.yml
+oc get po -w
+oc get po
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/d2c2c6ea-7360-4e5f-8062-e9ece0d0b594)
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/0152e29c-9265-4e30-9b3c-f75d37874e42)
