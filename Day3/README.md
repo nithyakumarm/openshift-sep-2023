@@ -378,3 +378,29 @@ oc run hello --image=tektutor/spring-tektutor-helloms:latest
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/39f4ae31-6d9f-49ce-a48d-a470006382d7)
 
+## Lab - Creating a ReplicaSet without Deployment
+
+Let's delete the project 
+```
+oc delete project/jegan
+```
+
+Let's create a new project
+```
+cd ~/openshift-sep-2023
+git pull
+cd Day3/declarative-manifests
+
+oc new-project jegan
+ls
+oc get all
+oc create -f nginx-rs.yml
+oc get deploy,rs,po
+oc delete pod/nginx-rs-gsj4j
+oc delete rs/nginx-rs
+c get all
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/af2630e5-0ac5-4b33-838b-9918cea7eaa2)
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/1c343e86-f17d-401c-86d2-95dcbeadf167)
