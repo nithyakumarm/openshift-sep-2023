@@ -71,6 +71,8 @@ Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/b4a7bc1f-dc59-41c6-8f9d-0705f218b307)
 
 ## Lab - Creating a nginx deployment in declarative style using yaml(manifest) file
+The oc create command should be used when the nginx deployment you are creating through file doesn't already exits in the OpenShift cluster.  In otherwords, only the first time we should use it.
+
 ```
 cd ~/openshift-sep-2023
 git pull
