@@ -220,3 +220,23 @@ oc create -f nginx-clusterip-svc.yml --save-config
 
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/fd57f149-9d7a-4750-b0e1-e8f5d6d5a0b8)
+
+## Lab - Creating a nodeport external service for nginx deployment in declarative style
+```
+oc delete -f nginx-clusterip-svc.yml
+oc expose deploy/nginx --type=NodePort --port=8080 --dry-run=client -o yaml > nginx-nodeport-svc.yml
+cat nginx-nodeport-svc.yml
+```
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/61a4686f-320c-454a-964d-4ecb35149560)
+
+You could create the nodeport sevice as shown below
+cd ~/openshift-sep-2023
+git pull
+cd Day3/declarative-manifests
+oc apply -f nginx-nodeport-svc.yml
+oc get svc
+oc describe svc/nginx
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/671324f7-7c68-440f-9f21-b79909d3816a)
