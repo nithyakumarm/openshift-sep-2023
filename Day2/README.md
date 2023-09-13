@@ -148,6 +148,12 @@ ExamplesL:-
 - the smallest unit that can be deployed and managed is Pod
 - generally deploying a Pod directly is not the recommended practice but is possible
 
+## Control Plane Components
+Control Plane components runs only in the master node
+1. API Server
+2. etcd data-store
+3. Scheduler
+4. Controller Managers
 
   
 # OpenShift commands
