@@ -436,3 +436,12 @@ From the OpenShift webconsole
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/51b0fb56-fd9d-4963-9b33-3fbe3907ba0f)
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/7ab8937a-1b9a-4300-b9a1-f76933b3f499)
 
+
+Now, let's proceed with wordpress deployment
+```
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/1979d773-538a-4385-996b-b8099c855951)
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/9c138dae-2bed-4fd9-aef2-775daf5fada8)
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/2e8e1f3e-01d0-4a86-a584-15fdac627cd2)
