@@ -407,6 +407,13 @@ Expected output
 
 ## Lab - Deploying a Wordpress and MySQL multi-pod application that uses external storage
 
+### What you will learn in this lab exercise?
+- Deploying multi-pod application
+- Practical use of Service discovery
+- Using Persistent Volume and Persistent Volume Claim
+- Use of ConfigMaps to store non-sensite application configuration data
+- Use of Secrets to store mysql login credentials and securely using them in wordpress and mysql deployments
+
 ![Wordpress](WordPress.png)
 
 
@@ -414,7 +421,7 @@ First, let's deploy mysql deployment with all its dependent resources
 ```
 cd ~/openshift-sep-2023
 git pull
-cd Day3/declarative-manifests
+cd Day3/wordpress-configmap-and-secrets
 
 oc apply -f wordpress-secrets.yml
 oc apply -f wordpress-cm.yml
@@ -436,3 +443,22 @@ From the OpenShift webconsole
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/51b0fb56-fd9d-4963-9b33-3fbe3907ba0f)
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/7ab8937a-1b9a-4300-b9a1-f76933b3f499)
 
+
+Now, let's proceed with wordpress deployment
+```
+
+cd ~/openshift-sep-2023
+git pull
+cd Day3/wordpress-configmap-and-secrets
+
+oc apply -f wordpress-pv.yml
+oc apply -f wordpress-pvc.yml
+oc apply -f wordpress-deploy.yml
+oc apply -f wordpress-svc.yml
+oc apply -f wordpress-route.yml
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/1979d773-538a-4385-996b-b8099c855951)
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/9c138dae-2bed-4fd9-aef2-775daf5fada8)
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/2e8e1f3e-01d0-4a86-a584-15fdac627cd2)
