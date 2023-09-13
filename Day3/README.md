@@ -1,5 +1,8 @@
 # Day 3
 
+## Info - StatefulSet
+https://medium.com/tektutor/deploying-stateful-applications-in-kubernetes-8ffd46920b55
+
 ## Lab - Listing all projects in OpenShift cluster
 ```
 oc get projects
