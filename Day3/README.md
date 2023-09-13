@@ -106,3 +106,18 @@ Update the nginx-deploy.yml, replicas value from 2 to 5 and save it before apply
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/642f27b9-8470-4d9e-93e6-2d9343c0251d)
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/c0a31f0e-6b67-4cf4-9d17-8e3b2bb5b725)
+
+## Lab - Scale down nginx deployment in declarative style
+
+Update the nginx-deploy.yml file replicase value from 5 to 2, save it before applying it.
+```
+cd ~/openshift-sep-2023
+git pull
+cd Day3/declarative-manifests
+gedit 
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/216b40c2-ae8e-4260-a9b0-3b297ea5017f)
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/4bb2805c-81dc-4c3d-9b7b-edf0137870d0)
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/16a1dfdf-13fa-47c0-8bdb-8e5479433617)
