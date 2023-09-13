@@ -136,7 +136,7 @@ cd Day3/declarative-manifests
 oc delete -f nginx-deploy.yml
 ```
 
-Then update the image in the nginx-deploy.yml from "bitnami/nginx:latest" to "bitnami/nginx:1.23" and save it.
+Then update the image in the nginx-deploy.yml from "bitnami/nginx:latest" to "bitnami/nginx:1.24" and save it.
 You can now apply/create this change into the cluster
 ```
 cd ~/openshift-sep-2023
