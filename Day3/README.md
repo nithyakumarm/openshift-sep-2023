@@ -309,6 +309,15 @@ There are 3 types of Services in Kubernetes/OpenShift
 
 ## Lab - Creating a external route as an alternate for NodePort service
 
+### Things to note
+- Route is only supported by OpenShift and not available in Kubernetes
+- Route provides a public url that is accessible outside the cluster
+- this serves as an alternate to nodeport
+- this is based on Ingress feature in Kubernetes
+- Ingress is not a service, it is a routing rule used in Load Balancer
+- the Ingress Controller picks the Ingress rule and configures the Load Balancer with those routing rule
+- Ingress supports routing calls to multiple different services, while the OpenShift route generally routes/forwards the call to just one service
+
 Let's delete the existing lb service
 ```
 cd ~/openshift-sep-2023
