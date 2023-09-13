@@ -10,8 +10,6 @@ Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/d59505e5-d7d1-4869-b2f2-c7a297090d0c)
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/0e27a513-81ad-492d-aa38-3277141c6246)
 
-
-
 ## Lab - Understanding Service Discovery in OpenShift/Kubernetes
 - Service discovery is nothing but accessing a service by it name which gets resolved into its respective IP address
 - DNS Server helps resolving the name of the service to the IP address of the service
@@ -99,3 +97,12 @@ oc get deploy,rs,po
 
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/b77f5eec-df2f-4542-a511-f92b9a5007c4)
+
+## Lab - Scale up nginx deployment in declarative style
+
+Update the nginx-deploy.yml, replicas value from 2 to 5 and save it before apply it.
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/62fe9839-0e21-4c57-a199-7029d241d172)
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/642f27b9-8470-4d9e-93e6-2d9343c0251d)
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/c0a31f0e-6b67-4cf4-9d17-8e3b2bb5b725)
