@@ -421,7 +421,7 @@ First, let's deploy mysql deployment with all its dependent resources
 ```
 cd ~/openshift-sep-2023
 git pull
-cd Day3/declarative-manifests
+cd Day3/wordpress-configmap-and-secrets
 
 oc apply -f wordpress-secrets.yml
 oc apply -f wordpress-cm.yml
@@ -446,6 +446,16 @@ From the OpenShift webconsole
 
 Now, let's proceed with wordpress deployment
 ```
+
+cd ~/openshift-sep-2023
+git pull
+cd Day3/wordpress-configmap-and-secrets
+
+oc apply -f wordpress-pv.yml
+oc apply -f wordpress-pvc.yml
+oc apply -f wordpress-deploy.yml
+oc apply -f wordpress-svc.yml
+oc apply -f wordpress-route.yml
 ```
 
 Expected output
