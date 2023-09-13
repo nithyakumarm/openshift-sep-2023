@@ -1,5 +1,17 @@
 # Day 3
 
+## Lab - Listing all projects in OpenShift cluster
+```
+oc get projects
+oc get namespaces
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/d59505e5-d7d1-4869-b2f2-c7a297090d0c)
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/0e27a513-81ad-492d-aa38-3277141c6246)
+
+
+
 ## Lab - Understanding Service Discovery in OpenShift/Kubernetes
 - Service discovery is nothing but accessing a service by it name which gets resolved into its respective IP address
 - DNS Server helps resolving the name of the service to the IP address of the service
