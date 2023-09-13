@@ -269,3 +269,33 @@ oc describe svc/nginx
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/815c91ab-7ee8-45ce-9ba0-ac0b72e9f274)
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/6cc1a57c-983b-4630-a4e6-5374e3df14ea)
+
+## Info - How to decide which type of service is suitable for a application deployment
+There are 3 types of Services in Kubernetes/OpenShift
+1. ClusterIP Internal Service
+2. NodePort External Service
+3. LoadBalancer External Service
+
+### CluterIP Internal Service
+- This type of Service is typically use for database deployments
+- This service can only be accessed from within the OpenShift cluster
+- As the application that needs database access runs within the OpenShift cluster, the ClusterIP db service will work perfectly
+- This is inbuilt feature of Kubernetes/OpenShift, hence there won't be any additional cost implications when your create ClusterIP Services either locally or in public cloud based OpenShift cluster
+
+### NodePort External Service
+- This type of Service is required to access the application from outside the OpenShift cluster
+- Typically for any front-end application or Microservices will require this type of service
+- Kubernetes/OpenShift has reserved 30000 to 32767 Port range on every Node in the Cluster for NodePort services
+- For each NodePort service we create in the OpenShift cluster, OpenShift will assign a port out of the range 30000-32767 whichever port is available on all the nodes in cluster
+- The NodePort will be opened up in every node in the OpenShift cluster
+- So each time you create a nodeport service it opens that port on every server in the OpenShift cluster, this might lead to some security issues
+- Also the way we access the nodeport service is not end-user friendly, hence this is suitable only for front-end application. Frontend application or Microservices can make use of NodePort.
+
+### LoadBalancer External Service
+- This type of Service is used when OpenShift runs in public cloud like AWS/Azure/GCP/Digital Ocean, etc.,
+- Each LoadBalancer service will create an External Load Balancer within AWS/Azure, hence there would be dedicated Server where the external Load Balancer works, unlike NodePort service or ClusterIp Service
+- Hence, LoadBalancer Service is more reliable
+- There is a cost implication each time you create a LoadBalancer Service in public cloud, as the public cloud vendor will charge on monthly basis for the LoadBalancer service
+- Loadbalancer also gets allocation one unique static ip, which is accessible over Internet, hence only one person/company can own that unique static ip, so there is a cost from static ip as well
+
+  
