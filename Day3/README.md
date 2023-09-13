@@ -270,6 +270,14 @@ Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/815c91ab-7ee8-45ce-9ba0-ac0b72e9f274)
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/6cc1a57c-983b-4630-a4e6-5374e3df14ea)
 
+## Info - What is Service?
+- service represents a group of similar pods that belongs to a single deployment in Kubernetes/OpenShift
+- they are load-balanced by default
+- they are highly available
+- application that run in Kubernetes/OpenShift aren't supposed to invoke Pod by IP/host, as Pods can be deleted/replaced any point of time
+- so the only reliable/stable abstraction your application can depend is the service
+- when a deployment is scaled up/down, the service pod endpoints are automatically updated, hence your application is decoupled from the Pod instance, this make it loosely coupled design
+
 ## Info - How to decide which type of service is suitable for a application deployment
 There are 3 types of Services in Kubernetes/OpenShift
 1. ClusterIP Internal Service
