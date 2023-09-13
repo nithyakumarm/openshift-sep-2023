@@ -242,3 +242,30 @@ oc describe svc/nginx
 
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/671324f7-7c68-440f-9f21-b79909d3816a)
+
+
+## Lab - Creating a LoadBalancer service in declarative style
+
+Let's delete the existing service before creating loadbalancer external service
+```
+cd ~/openshift-sep-2023
+git pull
+cd Day3/declarative-manifests
+oc delete -f nginx-nodeport-svc.yml
+```
+
+Let's create the loadbalancer service
+```
+cd ~/openshift-sep-2023
+git pull
+cd Day3/declarative-manifests
+
+oc expose deploy/nginx --type=LoadBalancer --port=8080 --dry-run=client -o yaml > nginx-lb-svc.yml
+cat nginx-lb-svc.yml
+oc apply -f nginx-lb-svc.yml
+oc get svc
+oc describe svc/nginx
+```
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/815c91ab-7ee8-45ce-9ba0-ac0b72e9f274)
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/6cc1a57c-983b-4630-a4e6-5374e3df14ea)
