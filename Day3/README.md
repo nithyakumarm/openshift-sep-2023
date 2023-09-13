@@ -1,6 +1,13 @@
 # Day 3
 
 ## Lab - Understanding Service Discovery in OpenShift/Kubernetes
+- Service discovery is nothing but accessing a service by it name which gets resolved into its respective IP address
+- DNS Server helps resolving the name of the service to the IP address of the service
+- Service discovery works only within the OpenShift cluster and it is supported by every type of service
+1. ClusterIP
+2. NodePort and
+3. LoadBalancer
+
 Delete any existing service you have in your project
 ```
 oc project
