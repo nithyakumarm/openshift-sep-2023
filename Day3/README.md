@@ -404,3 +404,15 @@ c get all
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/af2630e5-0ac5-4b33-838b-9918cea7eaa2)
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/1c343e86-f17d-401c-86d2-95dcbeadf167)
+
+## Lab - Deploying a Wordpress and MySQL multi-pod application that uses external storage
+
+![Wordpress](wordpress.png)
+
+```
+cd ~/openshift-sep-2023
+git pull
+cd Day3/declarative-manifests
+
+
+```
