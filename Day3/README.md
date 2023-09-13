@@ -409,10 +409,22 @@ Expected output
 
 ![Wordpress](WordPress.png)
 
+
+First, let's deploy mysql deployment with all its dependent resources
 ```
 cd ~/openshift-sep-2023
 git pull
 cd Day3/declarative-manifests
 
+oc apply -f wordpress-secrets.yml
+oc apply -f wordpress-cm.yml
 
+oc apply -f mysql-pv.yml
+oc apply -f mysql-pvc.yml
+oc apply -f mysql-deploy.yml
+oc apply -f mysql-svc.yml
 ```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/fb0be3f0-def5-4094-8c4e-efe93156d847)
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/09f82837-350a-4249-a116-372f80081697)
