@@ -1,5 +1,15 @@
 # Day 3
 
+## Lab - Listing all projects in OpenShift cluster
+```
+oc get projects
+oc get namespaces
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/d59505e5-d7d1-4869-b2f2-c7a297090d0c)
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/0e27a513-81ad-492d-aa38-3277141c6246)
+
 ## Lab - Understanding Service Discovery in OpenShift/Kubernetes
 - Service discovery is nothing but accessing a service by it name which gets resolved into its respective IP address
 - DNS Server helps resolving the name of the service to the IP address of the service
@@ -71,6 +81,10 @@ Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/b4a7bc1f-dc59-41c6-8f9d-0705f218b307)
 
 ## Lab - Creating a nginx deployment in declarative style using yaml(manifest) file
+The oc create command should be used when the nginx deployment you are creating through file doesn't already exist in the OpenShift cluster.  In otherwords, only the first time we should use create command and subsequent times we should use apply command to update any changes on the existing resources using the same yaml file.
+
+Interestingly, the apply command can be used everytime unlike the create command. 
+
 ```
 cd ~/openshift-sep-2023
 git pull
@@ -83,3 +97,101 @@ oc get deploy,rs,po
 
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/b77f5eec-df2f-4542-a511-f92b9a5007c4)
+
+## Lab - Scale up nginx deployment in declarative style
+
+Update the nginx-deploy.yml, replicas value from 2 to 5 and save it before apply it.
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/62fe9839-0e21-4c57-a199-7029d241d172)
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/642f27b9-8470-4d9e-93e6-2d9343c0251d)
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/c0a31f0e-6b67-4cf4-9d17-8e3b2bb5b725)
+
+## Lab - Scale down nginx deployment in declarative style
+
+Update the nginx-deploy.yml file replicase value from 5 to 2, save it before applying it.
+```
+cd ~/openshift-sep-2023
+git pull
+cd Day3/declarative-manifests
+gedit nginx-deploy.yml
+cat nginx-deploy.yml
+oc apply -f nginx-deploy.yml
+oc get po
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/216b40c2-ae8e-4260-a9b0-3b297ea5017f)
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/4bb2805c-81dc-4c3d-9b7b-edf0137870d0)
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/16a1dfdf-13fa-47c0-8bdb-8e5479433617)
+
+## Lab - Using Rolling update to upgrade your live application from one version to other without downtime
+
+First you can delete the nginx deploy that is already running in the cluster.
+```
+cd ~/openshift-sep-2023
+git pull
+cd Day3/declarative-manifests
+
+oc delete -f nginx-deploy.yml
+```
+
+Then update the image in the nginx-deploy.yml from "bitnami/nginx:latest" to "bitnami/nginx:1.24" and save it.
+You can now apply/create this change into the cluster
+```
+cd ~/openshift-sep-2023
+git pull
+cd Day3/declarative-manifests
+cat nginx-deploy.yml
+oc get deploy
+oc apply -f nginx-deploy.yml
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/6690b72a-401b-4ece-8421-dc2e633189af)
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/6c66ef09-81cc-4cd1-b7bb-a857380fcf31)
+
+Checking the rolling update status
+```
+oc rollout status deploy/nginx
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/1c56fb04-46ef-42d6-9ec1-1037bc8f2afb)
+
+
+Checking the rolling update revision history
+```
+oc rollout history deploy/nginx
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/829a0f9e-a29d-4277-b4a9-8069479c5b92)
+
+Let's update the image version from 1.24 to 1.25
+```
+cat nginx-deploy.yml
+oc apply -f nginx-deploy.yml
+oc get po -w
+oc get po
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/d2c2c6ea-7360-4e5f-8062-e9ece0d0b594)
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/0152e29c-9265-4e30-9b3c-f75d37874e42)
+
+Rolling back from 1.25 to 1.24
+```
+oc rollout undo deploy/nginx
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/a5926b72-c46e-48f0-9fc4-003aeba9b175)
+
+To cross-check what image version the nginx pods are using after rollback, you can try the below command
+```
+oc edit pod/nginx-669d5c7ff9-qzt7k
+```
+
+Expected outt
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/aa46cbc2-3457-4a40-943e-6edf8575dbe8)
