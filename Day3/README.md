@@ -1,5 +1,8 @@
 # Day 3
 
+## Info - StatefulSet
+https://medium.com/tektutor/deploying-stateful-applications-in-kubernetes-8ffd46920b55
+
 ## Lab - Listing all projects in OpenShift cluster
 ```
 oc get projects
@@ -220,3 +223,184 @@ oc create -f nginx-clusterip-svc.yml --save-config
 
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/fd57f149-9d7a-4750-b0e1-e8f5d6d5a0b8)
+
+## Lab - Creating a nodeport external service for nginx deployment in declarative style
+```
+oc delete -f nginx-clusterip-svc.yml
+oc expose deploy/nginx --type=NodePort --port=8080 --dry-run=client -o yaml > nginx-nodeport-svc.yml
+cat nginx-nodeport-svc.yml
+```
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/61a4686f-320c-454a-964d-4ecb35149560)
+
+You could create the nodeport sevice as shown below
+```
+cd ~/openshift-sep-2023
+git pull
+cd Day3/declarative-manifests
+oc apply -f nginx-nodeport-svc.yml
+oc get svc
+oc describe svc/nginx
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/671324f7-7c68-440f-9f21-b79909d3816a)
+
+
+## Lab - Creating a LoadBalancer service in declarative style
+
+Let's delete the existing service before creating loadbalancer external service
+```
+cd ~/openshift-sep-2023
+git pull
+cd Day3/declarative-manifests
+oc delete -f nginx-nodeport-svc.yml
+```
+
+Let's create the loadbalancer service
+```
+cd ~/openshift-sep-2023
+git pull
+cd Day3/declarative-manifests
+
+oc expose deploy/nginx --type=LoadBalancer --port=8080 --dry-run=client -o yaml > nginx-lb-svc.yml
+cat nginx-lb-svc.yml
+oc apply -f nginx-lb-svc.yml
+oc get svc
+oc describe svc/nginx
+```
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/815c91ab-7ee8-45ce-9ba0-ac0b72e9f274)
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/6cc1a57c-983b-4630-a4e6-5374e3df14ea)
+
+## Info - What is Service?
+- service represents a group of similar pods that belongs to a single deployment in Kubernetes/OpenShift
+- they are load-balanced by default
+- they are highly available
+- application that run in Kubernetes/OpenShift aren't supposed to invoke Pod by IP/host, as Pods can be deleted/replaced any point of time
+- so the only reliable/stable abstraction your application can depend is the service
+- when a deployment is scaled up/down, the service pod endpoints are automatically updated, hence your application is decoupled from the Pod instance, this make it loosely coupled design
+
+## Info - How to decide which type of service is suitable for a application deployment
+There are 3 types of Services in Kubernetes/OpenShift
+1. ClusterIP Internal Service
+2. NodePort External Service
+3. LoadBalancer External Service
+
+### CluterIP Internal Service
+- This type of Service is typically use for database deployments
+- This service can only be accessed from within the OpenShift cluster
+- As the application that needs database access runs within the OpenShift cluster, the ClusterIP db service will work perfectly
+- This is inbuilt feature of Kubernetes/OpenShift, hence there won't be any additional cost implications when your create ClusterIP Services either locally or in public cloud based OpenShift cluster
+
+### NodePort External Service
+- This type of Service is required to access the application from outside the OpenShift cluster
+- Typically for any front-end application or Microservices will require this type of service
+- Kubernetes/OpenShift has reserved 30000 to 32767 Port range on every Node in the Cluster for NodePort services
+- For each NodePort service we create in the OpenShift cluster, OpenShift will assign a port out of the range 30000-32767 whichever port is available on all the nodes in cluster
+- The NodePort will be opened up in every node in the OpenShift cluster
+- So each time you create a nodeport service it opens that port on every server in the OpenShift cluster, this might lead to some security issues
+- Also the way we access the nodeport service is not end-user friendly, hence this is suitable only for front-end application. Frontend application or Microservices can make use of NodePort.
+
+### LoadBalancer External Service
+- This type of Service is used when OpenShift runs in public cloud like AWS/Azure/GCP/Digital Ocean, etc.,
+- Each LoadBalancer service will create an External Load Balancer within AWS/Azure, hence there would be dedicated Server where the external Load Balancer works, unlike NodePort service or ClusterIp Service
+- Hence, LoadBalancer Service is more reliable
+- There is a cost implication each time you create a LoadBalancer Service in public cloud, as the public cloud vendor will charge on monthly basis for the LoadBalancer service
+- Loadbalancer also gets allocation one unique static ip, which is accessible over Internet, hence only one person/company can own that unique static ip, so there is a cost from static ip as well
+
+
+## Lab - Creating a external route as an alternate for NodePort service
+
+### Things to note
+- Route is only supported by OpenShift and not available in Kubernetes
+- Route provides a public url that is accessible outside the cluster
+- this serves as an alternate to nodeport
+- this is based on Ingress feature in Kubernetes
+- Ingress is not a service, it is a routing rule used in Load Balancer
+- the Ingress Controller picks the Ingress rule and configures the Load Balancer with those routing rule
+- Ingress supports routing calls to multiple different services, while the OpenShift route generally routes/forwards the call to just one service
+
+Let's delete the existing lb service
+```
+cd ~/openshift-sep-2023
+git pull
+cd Day3/declarative-manifests
+oc delete -f nginx-lb-svc.yml
+```
+
+Let's create a ClusterIP Internal Service
+```
+cd ~/openshift-sep-2023
+git pull
+cd Day3/declarative-manifests
+oc apply -f nginx-clusterip-svc.yml
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/b8a126f3-6c16-4bb6-a8d6-382093c8a82f)
+
+
+Let's expose the service via route to make it accessible outside the cluster with a public url
+```
+cd ~/openshift-sep-2023
+git pull
+cd Day3/declarative-manifests
+
+oc expose svc/nginx --dry-run=client -o yaml > nginx-route.yml
+cat nginx-route.yml
+oc create -f nginx-route.yml --save-config
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/de1de0bc-7919-423d-80f3-af3b2cbd1dd5)
+
+Accessing the external route
+```
+oc get route
+curl http://nginx-jegan.apps.ocp.tektutor-ocp-labs:80
+```
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/dc6eacc2-bfdb-4a6c-ae01-5da91f0d4f41)
+
+
+## Lab - Creating a Pod without replicaset/deployment
+
+### Things to Note
+- Creating a Pod without replicaset/deployment is considered a bad practice
+- In case the Pod crashes, as there is no replicaset to monitor and repair, we need to manually fix the error
+- Hence, this must be done only for testing purpose and not in production
+
+```
+oc run hello --image=tektutor/spring-tektutor-helloms:latest
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/39f4ae31-6d9f-49ce-a48d-a470006382d7)
+
+## Lab - Creating a ReplicaSet without Deployment
+
+Let's delete the project 
+```
+oc delete project/jegan
+```
+
+Let's create a new project
+```
+cd ~/openshift-sep-2023
+git pull
+cd Day3/declarative-manifests
+
+oc new-project jegan
+ls
+oc get all
+oc create -f nginx-rs.yml
+oc get deploy,rs,po
+oc delete pod/nginx-rs-gsj4j
+oc delete rs/nginx-rs
+c get all
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/af2630e5-0ac5-4b33-838b-9918cea7eaa2)
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/1c343e86-f17d-401c-86d2-95dcbeadf167)
