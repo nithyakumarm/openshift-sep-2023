@@ -342,3 +342,12 @@ oc create -f nginx-route.yml --save-config
 
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/de1de0bc-7919-423d-80f3-af3b2cbd1dd5)
+
+Accessing the external route
+```
+oc get route
+curl http://nginx-jegan.apps.ocp.tektutor-ocp-labs:80
+```
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/dc6eacc2-bfdb-4a6c-ae01-5da91f0d4f41)
+
