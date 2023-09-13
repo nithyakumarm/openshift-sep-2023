@@ -428,3 +428,10 @@ oc apply -f mysql-svc.yml
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/fb0be3f0-def5-4094-8c4e-efe93156d847)
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/09f82837-350a-4249-a116-372f80081697)
+
+
+From the OpenShift webconsole
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/21a5f423-368d-45a4-9496-fca3031afdac)
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/a1a74f80-ae27-4280-ab17-a1706a2e2e61)
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/51b0fb56-fd9d-4963-9b33-3fbe3907ba0f)
+
