@@ -404,3 +404,35 @@ c get all
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/af2630e5-0ac5-4b33-838b-9918cea7eaa2)
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/1c343e86-f17d-401c-86d2-95dcbeadf167)
+
+## Lab - Deploying a Wordpress and MySQL multi-pod application that uses external storage
+
+![Wordpress](WordPress.png)
+
+
+First, let's deploy mysql deployment with all its dependent resources
+```
+cd ~/openshift-sep-2023
+git pull
+cd Day3/declarative-manifests
+
+oc apply -f wordpress-secrets.yml
+oc apply -f wordpress-cm.yml
+
+oc apply -f mysql-pv.yml
+oc apply -f mysql-pvc.yml
+oc apply -f mysql-deploy.yml
+oc apply -f mysql-svc.yml
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/fb0be3f0-def5-4094-8c4e-efe93156d847)
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/09f82837-350a-4249-a116-372f80081697)
+
+
+From the OpenShift webconsole
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/21a5f423-368d-45a4-9496-fca3031afdac)
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/a1a74f80-ae27-4280-ab17-a1706a2e2e61)
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/51b0fb56-fd9d-4963-9b33-3fbe3907ba0f)
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/7ab8937a-1b9a-4300-b9a1-f76933b3f499)
+
