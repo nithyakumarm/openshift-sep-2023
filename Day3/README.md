@@ -35,3 +35,5 @@ If you wish to see the DNS Nameserver, you can try this
 oc get svc --all-namespaces | grep -i dns
 oc describe svc/dns-default -n openshift-dns
 ```
+
+
