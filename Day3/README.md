@@ -114,7 +114,10 @@ Update the nginx-deploy.yml file replicase value from 5 to 2, save it before app
 cd ~/openshift-sep-2023
 git pull
 cd Day3/declarative-manifests
-gedit 
+gedit nginx-deploy.yml
+cat nginx-deploy.yml
+oc apply -f nginx-deploy.yml
+oc get po
 ```
 
 Expected output
