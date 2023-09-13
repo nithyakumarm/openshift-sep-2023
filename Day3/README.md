@@ -407,6 +407,13 @@ Expected output
 
 ## Lab - Deploying a Wordpress and MySQL multi-pod application that uses external storage
 
+### What you will learn in this lab exercise?
+- Deploying multi-pod application
+- Practical use of Service discovery
+- Using Persistent Volume and Persistent Volume Claim
+- Use of ConfigMaps to store non-sensite application configuration data
+- Use of Secrets to store mysql login credentials and securely using them in wordpress and mysql deployments
+
 ![Wordpress](WordPress.png)
 
 
