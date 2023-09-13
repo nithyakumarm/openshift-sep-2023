@@ -325,13 +325,20 @@ cd Day3/declarative-manifests
 oc apply -f nginx-clusterip-svc.yml
 ```
 
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/b8a126f3-6c16-4bb6-a8d6-382093c8a82f)
+
+
 Let's expose the service via route to make it accessible outside the cluster with a public url
 ```
+cd ~/openshift-sep-2023
+git pull
+cd Day3/declarative-manifests
+
 oc expose svc/nginx --dry-run=client -o yaml > nginx-route.yml
 cat nginx-route.yml
 oc create -f nginx-route.yml --save-config
 ```
 
 Expected output
-![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/b8a126f3-6c16-4bb6-a8d6-382093c8a82f)
-
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/de1de0bc-7919-423d-80f3-af3b2cbd1dd5)
