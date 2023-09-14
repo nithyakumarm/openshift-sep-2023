@@ -23,3 +23,18 @@ You can check the Developer view Topology
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/3527bb63-ebcd-43e4-988d-e297c2fe4c05)
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/c6fce17a-e34c-4e2f-a0ae-5f983592e5c0)
 
+## Lab - Starting a build from command-line using buildconfig
+```
+oc get buildconfigs
+oc get buildconfig
+oc get bc
+```
+
+Start a build from buildconfig
+```
+oc start-build bc/spring-ms
+oc logs -f bc/spring-ms
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/fa3e7fc6-9330-4433-ad15-29f5a7d7fa9b)
