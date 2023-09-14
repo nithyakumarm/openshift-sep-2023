@@ -132,3 +132,22 @@ oc get nodes -l disk=ssd
 
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/e172d74b-77f5-4ee5-bc33-dddd5912a7ea)
+
+## Lab - Pod manifest has a preferred criteria i.e node has label disk=ssd
+
+How the node affinity works in case of Preferred ?
+- The scheduler will search for nodes that has label disk=ssd, if it is able to find a node that has the label then the Pod will be scheduler there
+- If the scheduler isn't able to find such a node, the scheduler will deploy it on any node as per scheduler's choice
+
+```
+cd ~/openshift-sep-2023
+git pull
+oc delete pod/hello
+cd Day4/node-affinity
+oc apply -f pod-with-node-affinity-preferred.yml
+oc get nodes -l disk=ssd
+oc get po
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/2db7344b-7c2b-4434-b986-ac3764a7b031)
