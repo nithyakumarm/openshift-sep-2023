@@ -64,3 +64,18 @@ oc logs -f bc/spring-ms
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/4cfd0edf-6e43-4e93-98ca-7ca5e7c4f03b)
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/fc099ea9-1507-4d14-9afb-29b789b23c85)
+
+
+Let's create a route for the spring-ms service
+```
+oc get svc
+oc expose svc/spring-ms
+oc get routes
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/286cdcb3-250a-427a-a5a7-0ddc7faf7e74)
+
+Now you may access the route from Developer context Topology from your web browser on the CentOS Lab machine.
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/5e707c1b-d506-42e3-9b6d-646e4ae39302)
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/5a24dbad-825d-4744-b591-66a6ee98018d)
