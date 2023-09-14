@@ -38,3 +38,10 @@ oc logs -f bc/spring-ms
 
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/fa3e7fc6-9330-4433-ad15-29f5a7d7fa9b)
+
+
+Create a route for spring-ms application deployment
+```
+oc get svc
+oc expose svc/spring-ms
+```
