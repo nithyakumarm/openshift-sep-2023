@@ -161,3 +161,8 @@ https://app.mymapit.in/code4/tiny/yTefEw
 
 ## Feedback link :
 https://tcheck.co/HgqK27
+
+
+## Installing OpenShift on your laptop
+https://developers.redhat.com/products/openshift-local/overview
+
