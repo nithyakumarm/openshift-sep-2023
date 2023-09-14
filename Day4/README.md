@@ -45,3 +45,22 @@ Create a route for spring-ms application deployment
 oc get svc
 oc expose svc/spring-ms
 ```
+
+## Lab - Deploying our custom application into OpenShift using source strategy
+```
+oc delete project/jegan
+oc new-project jegan
+oc new-app registry.access.redhat.com/ubi8/openjdk-11~https://github.com/tektutor/spring-ms.git --strategy=souurce
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/c5390ed3-1584-4310-adbc-663848dcfb54)
+
+Checking the build log
+```
+oc logs -f bc/spring-ms
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/4cfd0edf-6e43-4e93-98ca-7ca5e7c4f03b)
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/fc099ea9-1507-4d14-9afb-29b789b23c85)
