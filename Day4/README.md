@@ -151,3 +151,7 @@ oc get po
 
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/2db7344b-7c2b-4434-b986-ac3764a7b031)
+
+## Info - Docker Network Model
+
+## Info - OpenShift/Kubernetes Network Model
