@@ -102,3 +102,5 @@ Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/fea6ce87-ae87-47d1-a17a-5934639dca19)
 
 Now you may access the application using its route url from the OpenShift webconsole
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/bb7c5c0f-cc8b-46b8-a943-7254560d7bcc)
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/29afcfd7-106b-403e-b09c-321ca7ba0731)
