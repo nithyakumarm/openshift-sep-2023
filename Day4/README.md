@@ -104,3 +104,31 @@ Expected output
 Now you may access the application using its route url from the OpenShift webconsole
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/bb7c5c0f-cc8b-46b8-a943-7254560d7bcc)
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/29afcfd7-106b-403e-b09c-321ca7ba0731)
+
+## Lab - Node Affinity Required criteria
+
+When creating the pod, we have added some criteria for the default-scheduler to follow.  When the criteria is required, the scheduler will look for nodes that has a label matching "ssd" type disk, in case it isn't able to find a node that has label disk=ssd then the Pod will not be deployed.
+
+```
+cd ~/openshift-sep-2023
+git pull
+cd Day4/node-affinity
+oc apply -f pod-with-node-affinity-required.yml
+oc get po
+oc describe pod/hello
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/4bdd17f3-a156-423c-8c3e-938a697da2c8)
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/6cf0e94e-10a3-45c9-b8de-968238339fba)
+
+Now let's add the label to worker-1 node and see the Pod getting deployed into worker-1.
+```
+oc label node/worker-1.ocp.tektutor-ocp-labs disk=ssd
+oc get po -w
+oc get po -o wide
+oc get nodes -l disk=ssd
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/e172d74b-77f5-4ee5-bc33-dddd5912a7ea)
