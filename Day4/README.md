@@ -1,6 +1,6 @@
 # Day 4
 
-## Lab - Deploying an application using GitHub Repo source code
+## Lab - Deploying an application using GitHub Repo source code using Docker strategy
 ```
 oc project jegan
 oc new-app https://github.com/tektutor/spring-ms.git
@@ -50,7 +50,7 @@ oc expose svc/spring-ms
 ```
 oc delete project/jegan
 oc new-project jegan
-oc new-app registry.access.redhat.com/ubi8/openjdk-11~https://github.com/tektutor/spring-ms.git --strategy=souurce
+oc new-app registry.access.redhat.com/ubi8/openjdk-11~https://github.com/tektutor/spring-ms.git --strategy=source
 ```
 
 Expected output
@@ -79,3 +79,26 @@ Expected output
 Now you may access the route from Developer context Topology from your web browser on the CentOS Lab machine.
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/5e707c1b-d506-42e3-9b6d-646e4ae39302)
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/5a24dbad-825d-4744-b591-66a6ee98018d)
+
+## Lab - Deploying custom appling using Docker Hub custom image
+```
+oc delete project/jegan
+oc new-project jegan
+oc new-app tektutor/spring-ms:1.0
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/d78cc75f-a05d-4400-94e7-ccc28fe29ff4)
+
+Let us check the deployment status
+```
+oc status
+oc get svc
+oc expose svc/spring-ms
+oc get route
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/fea6ce87-ae87-47d1-a17a-5934639dca19)
+
+Now you may access the application using its route url from the OpenShift webconsole
