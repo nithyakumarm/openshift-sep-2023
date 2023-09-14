@@ -132,3 +132,56 @@ oc get nodes -l disk=ssd
 
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/e172d74b-77f5-4ee5-bc33-dddd5912a7ea)
+
+## Lab - Pod manifest has a preferred criteria i.e node has label disk=ssd
+
+How the node affinity works in case of Preferred ?
+- The scheduler will search for nodes that has label disk=ssd, if it is able to find a node that has the label then the Pod will be scheduler there
+- If the scheduler isn't able to find such a node, the scheduler will deploy it on any node as per scheduler's choice
+
+```
+cd ~/openshift-sep-2023
+git pull
+oc delete pod/hello
+cd Day4/node-affinity
+oc apply -f pod-with-node-affinity-preferred.yml
+oc get nodes -l disk=ssd
+oc get po
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/2db7344b-7c2b-4434-b986-ac3764a7b031)
+
+## Info - Docker Network Model
+
+## Info - OpenShift/Kubernetes Network Model
+
+## Post Test Link
+https://app.mymapit.in/code4/tiny/yTefEw
+
+## Feedback link :
+https://tcheck.co/HgqK27
+
+
+## Installing OpenShift on your laptop
+https://developers.redhat.com/products/openshift-local/overview
+
+You need to login to your RedHat account to download crc compressed file and pullsecret files.
+
+You need to extract it
+```
+cd ~/Downloads
+mv crc-linux-amd64.tar.xz ..
+cd ..
+tar xvf crc-linux-amd64.tar.xz
+cd crc-linux-amd64.tar.xz
+sudo cp crc /usr/bin
+```
+
+Now you can start the Code Ready Container Setup
+```
+crc setup
+```
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/a490c060-bff6-4424-99c8-928153b00517)
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/85a2f122-27f9-45f4-9aef-1658d1fbef9b)
