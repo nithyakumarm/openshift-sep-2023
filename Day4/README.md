@@ -166,3 +166,22 @@ https://tcheck.co/HgqK27
 ## Installing OpenShift on your laptop
 https://developers.redhat.com/products/openshift-local/overview
 
+You need to login to your RedHat account to download crc compressed file and pullsecret files.
+
+You need to extract it
+```
+cd ~/Downloads
+mv crc-linux-amd64.tar.xz ..
+cd ..
+tar xvf crc-linux-amd64.tar.xz
+cd crc-linux-amd64.tar.xz
+sudo cp crc /usr/bin
+```
+
+Now you can start the Code Ready Container Setup
+```
+crc setup
+```
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/a490c060-bff6-4424-99c8-928153b00517)
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/85a2f122-27f9-45f4-9aef-1658d1fbef9b)
