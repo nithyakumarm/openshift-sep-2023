@@ -185,3 +185,4 @@ crc setup
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/a490c060-bff6-4424-99c8-928153b00517)
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/85a2f122-27f9-45f4-9aef-1658d1fbef9b)
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/75a30b94-daf3-4d55-bb85-f5e46a23d27c)
