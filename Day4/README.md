@@ -19,3 +19,7 @@ Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/fc1ffa47-19a8-4bef-b53b-eaa554257f08)
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/f53ec5b6-a66d-4078-9e11-53896d2718bf)
 
+You can check the Developer view Topology
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/3527bb63-ebcd-43e4-988d-e297c2fe4c05)
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/c6fce17a-e34c-4e2f-a0ae-5f983592e5c0)
+
