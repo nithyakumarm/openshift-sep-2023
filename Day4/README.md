@@ -4,8 +4,18 @@
 ```
 oc project jegan
 oc new-app https://github.com/tektutor/spring-ms.git
+oc expose service/spring-ms
 ```
 
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/dee9d503-d24b-48e3-92d8-014f754f756d)
+
+To check the build logs in command line, you can try this
+```
+oc logs -f build/spring-ms-1
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/fc1ffa47-19a8-4bef-b53b-eaa554257f08)
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/f53ec5b6-a66d-4078-9e11-53896d2718bf)
 
