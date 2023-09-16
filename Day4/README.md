@@ -217,3 +217,17 @@ oc new-app registry.access.redhat.com/ubi8/openjdk-11~https://github.com/tektuto
 
 Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/6cb4c305-0fae-4b17-9f70-50268b8057ff)
+
+Create a route to access the deployed application
+```
+oc expose service/spring-ms
+```
+
+Expected ouput
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/a43fd2ba-7e25-47a7-8f75-9a113bdd0886)
+
+Now head-over to your Red Hat OpenShift webconsole to access the application route
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/e20d0084-79bc-4e4c-bfb6-9165bb9a3b6d)
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/7d68b597-e37e-4b5a-9d49-87a1ed565aab)
+
+Congratulations!, your Red Hat OpenShift local setup is ready to practice ...
