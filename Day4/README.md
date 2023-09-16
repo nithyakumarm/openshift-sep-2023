@@ -196,3 +196,24 @@ Expected output
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/1e76f885-0ecf-4278-9203-e4f040f5f3c6)
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/895e72cf-cb97-4e6d-8996-a130e74ac4f3)
 ![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/2e11ce24-0caf-429c-bf61-fb7c69f0471e)
+
+Don't forget to save the Red Hat OpenShift login credentials, in my case I saved it as shown below
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/bcb7baa0-e0c7-4775-8f1b-8b90d2c32b48)
+
+Login to Red Hat OpenShift via command-line and create a project
+```
+oc login -u developer https://api.crc.testing:6443
+```
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/64eb5702-60bc-4fc6-a079-1ca2d95df5be)
+
+You can access the webconsole at the below URL in your web browser with developer as user and developer as password
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/1fcc6764-0df0-411d-9144-80596805555a)
+
+Deploy an application to check if your cluster is working properly
+```
+oc new-app registry.access.redhat.com/ubi8/openjdk-11~https://github.com/tektutor/spring-ms.git --strategy=source
+```
+
+Expected output
+![image](https://github.com/tektutor/openshift-sep-2023/assets/12674043/6cb4c305-0fae-4b17-9f70-50268b8057ff)
